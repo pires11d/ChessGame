@@ -1,0 +1,16 @@
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\bin\Debug\netcoreapp3.1\Chess.Console.exe
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\bin\Debug\netcoreapp3.1\Chess.Console.deps.json
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\bin\Debug\netcoreapp3.1\Chess.Console.runtimeconfig.json
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\bin\Debug\netcoreapp3.1\Chess.Console.runtimeconfig.dev.json
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\bin\Debug\netcoreapp3.1\Chess.Console.dll
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\bin\Debug\netcoreapp3.1\Chess.Console.pdb
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\obj\Debug\netcoreapp3.1\Chess.Console.AssemblyInfoInputs.cache
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\obj\Debug\netcoreapp3.1\Chess.Console.AssemblyInfo.cs
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\obj\Debug\netcoreapp3.1\Chess.Console.csproj.CoreCompileInputs.cache
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\obj\Debug\netcoreapp3.1\Chess.Console.dll
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\obj\Debug\netcoreapp3.1\Chess.Console.pdb
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\obj\Debug\netcoreapp3.1\Chess.Console.genruntimeconfig.cache
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\bin\Debug\netcoreapp3.1\Chess.Lib.dll
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\bin\Debug\netcoreapp3.1\Chess.Lib.pdb
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\obj\Debug\netcoreapp3.1\Chess.Console.csprojAssemblyReference.cache
+D:\OneDrive\myApps\C#\ChessGame\Chess.Console\obj\Debug\netcoreapp3.1\Chess.Console.csproj.CopyComplete
