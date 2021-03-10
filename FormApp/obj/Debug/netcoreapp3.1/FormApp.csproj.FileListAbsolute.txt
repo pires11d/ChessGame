@@ -1,6 +1,0 @@
-D:\OneDrive\myApps\C#\ChessGame\FormApp\obj\Debug\netcoreapp3.1\FormApp.csprojAssemblyReference.cache
-D:\OneDrive\myApps\C#\ChessGame\FormApp\obj\Debug\netcoreapp3.1\Chess.Form.MainScreen.resources
-D:\OneDrive\myApps\C#\ChessGame\FormApp\obj\Debug\netcoreapp3.1\FormApp.csproj.GenerateResource.cache
-D:\OneDrive\myApps\C#\ChessGame\FormApp\obj\Debug\netcoreapp3.1\FormApp.AssemblyInfoInputs.cache
-D:\OneDrive\myApps\C#\ChessGame\FormApp\obj\Debug\netcoreapp3.1\FormApp.AssemblyInfo.cs
-D:\OneDrive\myApps\C#\ChessGame\FormApp\obj\Debug\netcoreapp3.1\FormApp.csproj.CoreCompileInputs.cache

@@ -1,9 +1,0 @@
-D:\OneDrive\myApps\C#\ChessGame\Lib\bin\Debug\netcoreapp3.1\Lib.deps.json
-D:\OneDrive\myApps\C#\ChessGame\Lib\bin\Debug\netcoreapp3.1\Lib.dll
-D:\OneDrive\myApps\C#\ChessGame\Lib\bin\Debug\netcoreapp3.1\Lib.pdb
-D:\OneDrive\myApps\C#\ChessGame\Lib\obj\Debug\netcoreapp3.1\Lib.csprojAssemblyReference.cache
-D:\OneDrive\myApps\C#\ChessGame\Lib\obj\Debug\netcoreapp3.1\Lib.AssemblyInfoInputs.cache
-D:\OneDrive\myApps\C#\ChessGame\Lib\obj\Debug\netcoreapp3.1\Lib.AssemblyInfo.cs
-D:\OneDrive\myApps\C#\ChessGame\Lib\obj\Debug\netcoreapp3.1\Lib.csproj.CoreCompileInputs.cache
-D:\OneDrive\myApps\C#\ChessGame\Lib\obj\Debug\netcoreapp3.1\Lib.dll
-D:\OneDrive\myApps\C#\ChessGame\Lib\obj\Debug\netcoreapp3.1\Lib.pdb
