@@ -1,5 +1,4 @@
-﻿using Lib.Entities;
-using Lib.Enums.Pieces;
+﻿using Lib.Enums.Pieces;
 
 namespace Lib.Entities.Pieces
 {
@@ -14,48 +13,48 @@ namespace Lib.Entities.Pieces
             Board = board;
         }
 
-        public override bool[,] PossibleMoves()
+        public override bool[,] PossibleMoves(Player player)
         {
             var matrix = new bool[Board.Rows, Board.Columns];
             var p = new Position();
 
             //Top
-            p = Position.Top();
+            p = this.Position.Top();
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //Bottom
-            p = Position.Bottom();
+            p = this.Position.Bottom();
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //Left
-            p = Position.Left();
+            p = this.Position.Left();
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //Right
-            p = Position.Right();
+            p = this.Position.Right();
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //TopLeft
-            p = Position.TopLeft();
+            p = this.Position.TopLeft();
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //TopRight
-            p = Position.TopRight();
+            p = this.Position.TopRight();
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //BottomLeft
-            p = Position.BottomLeft();
+            p = this.Position.BottomLeft();
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //BottomRight
-            p = Position.BottomRight();
+            p = this.Position.BottomRight();
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 

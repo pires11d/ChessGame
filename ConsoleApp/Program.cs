@@ -16,58 +16,85 @@ namespace ConsoleApp
             if (game == null)
                 game = new Match();
 
-            Console.Clear();
-            game.Board.Print();
-            Console.WriteLine();
-
             bool found = false;
             while (!found)
             {
                 try
                 {
-                    Console.Write("Escolha uma peça do tabuleiro para mover: ");
+                    PrintRoundInfo(game);
                     input1 = Console.ReadLine();
 
-                    if (!String.IsNullOrEmpty(input1))
+                    if (!string.IsNullOrEmpty(input1))
                     {
                         game.Origin = new Position(input1);
-                        found = game.Board.ExistsPiece(game.Origin);
                         var pieceFound = game.Board.Piece(game.Origin);
+
                         if (pieceFound != null)
-                            game.Board.SelectPiece(pieceFound);
+                        {
+                            if (pieceFound.Color == game.CurrentPlayer.Color)
+                            {
+                                found = true;
+                                game.Board.SelectPiece(pieceFound);
+                            }
+                            else
+                            {
+                                found = false;
+                                Console.WriteLine("Esta peça pertence ao adversário! Por favor escolha outra.");
+                                Console.ReadKey();
+                            }
+                        }
                         else
+                        {
+                            found = false;
                             Console.WriteLine("Peça não encontrada... Tente novamente!");
+                            Console.ReadKey();
+                        }
                     }
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
-                    Console.WriteLine(e.Message);
+                    Console.WriteLine(ex.Message);
                     Console.ReadLine();
                 }
             }
 
-            Console.Clear();
-            game.Board.Print();
-            Console.WriteLine();
+            game.Board.Print(game.CurrentPlayer);
 
             try
             {
                 Console.Write("Digite a posição para onde deseja mover a peça: ");
                 input2 = Console.ReadLine();
 
-                if (!String.IsNullOrEmpty(input2))
+                if (!string.IsNullOrEmpty(input2))
                 {
                     game.Destination = new Position(input2);
                     game.MovePiece(game.Origin, game.Destination);
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(ex.Message);
                 Console.ReadLine();
             }
 
-            PlayChess(game, input1, input2);
+            if (!game.Over)
+                PlayChess(game, input1, input2);
+        }
+
+        private static void PrintRoundInfo(Match game)
+        {
+            Console.BackgroundColor = ConsoleColor.Black;
+
+            game.Board.Print(game.CurrentPlayer);
+
+            Console.WriteLine($"Peças capturadas pelo jogador 1: {game.CurrentPlayer.PiecesCaptured.Count}");
+            Console.WriteLine($"Peças capturadas pelo jogador 2: {game.OtherPlayer.PiecesCaptured.Count}\n");
+
+            Console.Write($"Jogador da vez: Cor ");
+            Console.ForegroundColor = (ConsoleColor)game.CurrentPlayer.Color;
+            Console.Write($"{game.CurrentPlayer.Color.GetDescription()} \n");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Escolha uma peça do tabuleiro para mover: ");
         }
     }
 }

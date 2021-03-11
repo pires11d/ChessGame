@@ -1,5 +1,4 @@
-﻿using Lib.Entities;
-using Lib.Enums.Pieces;
+﻿using Lib.Enums.Pieces;
 
 namespace Lib.Entities.Pieces
 {
@@ -14,9 +13,46 @@ namespace Lib.Entities.Pieces
             Board = board;
         }
 
-        public override bool[,] PossibleMoves()
+        public override bool[,] PossibleMoves(Player player)
         {
             var matrix = new bool[Board.Rows, Board.Columns];
+            var p = new Position();
+
+            //TopLeft
+            p = this.Position;
+            while (p.IsValid())
+            {
+                p = p.TopLeft();
+                if (CanMoveTo(p))
+                    matrix[p.Row, p.Column] = true;
+            }
+
+            //TopRight
+            p = this.Position;
+            while (p.IsValid())
+            {
+                p = p.TopRight();
+                if (CanMoveTo(p))
+                    matrix[p.Row, p.Column] = true;
+            }
+
+            //BottomLeft
+            p = this.Position;
+            while (p.IsValid())
+            {
+                p = p.BottomLeft();
+                if (CanMoveTo(p))
+                    matrix[p.Row, p.Column] = true;
+            }
+
+            //BottomRight
+            p = this.Position;
+            while (p.IsValid())
+            {
+                p = p.BottomRight();
+                if (CanMoveTo(p))
+                    matrix[p.Row, p.Column] = true;
+            }
 
             return matrix;
         }

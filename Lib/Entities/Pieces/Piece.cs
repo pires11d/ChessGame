@@ -1,5 +1,4 @@
 ﻿using Lib.Enums.Pieces;
-using System;
 
 namespace Lib.Entities.Pieces
 {
@@ -45,11 +44,13 @@ namespace Lib.Entities.Pieces
 
         public void Select()
         {
+            Board.CurrentPiece = this;
             Color = PieceColorEnum.Green;
         }
 
         public void Deselect()
         {
+            Board.CurrentPiece = null;
             Color = DefaultColor;
         }
 
@@ -63,6 +64,6 @@ namespace Lib.Entities.Pieces
             return (canMoveFreely && piece == null) || (canCapture && piece != null && piece.DefaultColor != DefaultColor);
         }
 
-        public abstract bool[,] PossibleMoves();
+        public abstract bool[,] PossibleMoves(Player player);
     }
 }

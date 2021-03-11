@@ -12,10 +12,6 @@ namespace Lib.Entities
 
         private Piece[,] Pieces { get; set; }
 
-        public Board()
-        {
-        }
-
         public Board(int rows, int columns)
         {
             Rows = rows;
@@ -60,14 +56,17 @@ namespace Lib.Entities
         public void SelectPiece(Piece pieceFound)
         {
             pieceFound.Select();
+
             Pieces[pieceFound.Position.Row, pieceFound.Position.Column] = pieceFound;
         }
+
         public void DeselectPiece(Piece pieceFound)
         {
             pieceFound.Deselect();
             Pieces[pieceFound.Position.Row, pieceFound.Position.Column] = pieceFound;
         }
 
+        internal Piece CurrentPiece { get; set; }
 
         public bool ExistsPiece(Position position)
         {
@@ -75,16 +74,18 @@ namespace Lib.Entities
             return Piece(position) != null;
         }
 
-        public void Print()
+        public void Print(Player player = null)
         {
+            Console.Clear();
+
             for (int i = 0; i < Rows; i++)
             {
                 GameMode(false);
-                Console.Write(8 - i+" ");
+                Console.Write(8 - i + " ");
 
                 for (int j = 0; j < Columns; j++)
                 {
-                    GameMode(true,i,j);
+                    GameMode(true, i, j);
                     Console.Write(" ");
 
                     var piece = GetPieceByIndex(i, j);
@@ -96,7 +97,7 @@ namespace Lib.Entities
                     else
                     {
                         Console.ForegroundColor = ConsoleColor.DarkGray;
-                        Console.Write(" ");
+                        GetPossibleMoves(i, j, player);
                     }
 
                     Console.Write(" ");
@@ -108,13 +109,24 @@ namespace Lib.Entities
 
             GameMode(false);
             Console.Write("   ");
-            for (int k =0; k < Columns; k++)
+            for (int k = 0; k < Columns; k++)
             {
-                int charNumber = k+65;
-                Console.Write((char)charNumber+"  ");
+                int charNumber = k + 65;
+                Console.Write((char)charNumber + "  ");
             }
 
-            Console.WriteLine();
+            Console.WriteLine("\n");
+        }
+
+        private void GetPossibleMoves(int i, int j, Player player)
+        {
+            if (player != null && 
+                CurrentPiece != null && 
+                CurrentPiece.PossibleMoves(player)[i, j])
+                Console.Write("*");
+            else
+                Console.Write(" ");
+
         }
 
         public void GameMode(bool isGame, int i = 0, int j = 0)
@@ -127,10 +139,10 @@ namespace Lib.Entities
                     else
                         Console.BackgroundColor = ConsoleColor.Black;
                 else
-                        if (j % 2 != 0)
-                    Console.BackgroundColor = ConsoleColor.White;
-                else
-                    Console.BackgroundColor = ConsoleColor.Black;
+                    if (j % 2 != 0)
+                        Console.BackgroundColor = ConsoleColor.White;
+                    else
+                        Console.BackgroundColor = ConsoleColor.Black;
             }
             else
             {
