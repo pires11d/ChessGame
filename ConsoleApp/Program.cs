@@ -1,5 +1,4 @@
 ﻿using Lib.Entities;
-using Lib.Enums.Pieces;
 using System;
 
 namespace ConsoleApp

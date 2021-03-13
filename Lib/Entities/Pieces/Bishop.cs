@@ -25,6 +25,8 @@ namespace Lib.Entities.Pieces
                 p = p.TopLeft();
                 if (CanMoveTo(p))
                     matrix[p.Row, p.Column] = true;
+                else
+                    break;
             }
 
             //TopRight
@@ -34,6 +36,8 @@ namespace Lib.Entities.Pieces
                 p = p.TopRight();
                 if (CanMoveTo(p))
                     matrix[p.Row, p.Column] = true;
+                else
+                    break;
             }
 
             //BottomLeft
@@ -43,6 +47,8 @@ namespace Lib.Entities.Pieces
                 p = p.BottomLeft();
                 if (CanMoveTo(p))
                     matrix[p.Row, p.Column] = true;
+                else
+                    break;
             }
 
             //BottomRight
@@ -52,6 +58,8 @@ namespace Lib.Entities.Pieces
                 p = p.BottomRight();
                 if (CanMoveTo(p))
                     matrix[p.Row, p.Column] = true;
+                else
+                    break;
             }
 
             return matrix;

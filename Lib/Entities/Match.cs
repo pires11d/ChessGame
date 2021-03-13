@@ -14,6 +14,12 @@ namespace Lib.Entities
             StartNewGame(PieceColorEnum.Red, PieceColorEnum.Blue);
         }
 
+        public Match(PieceColorEnum color1, PieceColorEnum color2)
+        {
+            Board = new Board(8, 8);
+            StartNewGame(color1, color2);
+        }
+
         public Board Board { get; set; }
 
         public Position Origin { get; set; }
@@ -72,8 +78,8 @@ namespace Lib.Entities
             Board.AddPiece(new Position(0, 0), new Rook(color1));
             Board.AddPiece(new Position(0, 1), new Horse(color1));
             Board.AddPiece(new Position(0, 2), new Bishop(color1));
-            Board.AddPiece(new Position(0, 3), new King(color1));
-            Board.AddPiece(new Position(0, 4), new Queen(color1));
+            Board.AddPiece(new Position(0, 3), new Queen(color1));
+            Board.AddPiece(new Position(0, 4), new King(color1));
             Board.AddPiece(new Position(0, 5), new Bishop(color1));
             Board.AddPiece(new Position(0, 6), new Horse(color1));
             Board.AddPiece(new Position(0, 7), new Rook(color1));
@@ -98,8 +104,8 @@ namespace Lib.Entities
             Board.AddPiece(new Position(7, 0), new Rook(color2));
             Board.AddPiece(new Position(7, 1), new Horse(color2));
             Board.AddPiece(new Position(7, 2), new Bishop(color2));
-            Board.AddPiece(new Position(7, 3), new King(color2));
-            Board.AddPiece(new Position(7, 4), new Queen(color2));
+            Board.AddPiece(new Position(7, 3), new Queen(color2));
+            Board.AddPiece(new Position(7, 4), new King(color2));
             Board.AddPiece(new Position(7, 5), new Bishop(color2));
             Board.AddPiece(new Position(7, 6), new Horse(color2));
             Board.AddPiece(new Position(7, 7), new Rook(color2));
