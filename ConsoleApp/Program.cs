@@ -76,7 +76,7 @@ namespace ConsoleApp
                 Console.ReadLine();
             }
 
-            if (!game.Over)
+            if (!game.isOver)
                 PlayChess(game, input1, input2);
         }
 

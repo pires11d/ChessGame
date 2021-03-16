@@ -4,22 +4,22 @@ namespace Lib.Enums.Pieces
 {
     public enum PieceTypeEnum
     {
-        [Description("Peão")]
+        [Description("♟")]
         Pawn = 0,
 
-        [Description("Torre")]
+        [Description("♜")]
         Rook = 1,
 
-        [Description("Cavalo")]
+        [Description("♞")]
         Horse = 2,
 
-        [Description("Bispo")]
+        [Description("♝")]
         Bishop = 3,
 
-        [Description("Rainha")]
+        [Description("♛")]
         Queen = 4,
 
-        [Description("Rei")]
+        [Description("♚")]
         King = 5
     }
 }

@@ -26,13 +26,13 @@ namespace Lib.Entities
 
         public Position Destination { get; set; }
 
-        public List<Player> Players { get; set; } = new List<Player>();
+        public Dictionary<int,Player> Players { get; set; } = new Dictionary<int, Player>();
 
         public Player CurrentPlayer { get; set; }
 
         public Player OtherPlayer { get; set; }
 
-        public bool Over { get; set; }
+        public bool isOver { get; set; }
 
         public void MovePiece(Position origin, Position destination)
         {
@@ -55,8 +55,8 @@ namespace Lib.Entities
 
         private void ChangeTurn(PieceColorEnum currentColor)
         {
-            CurrentPlayer = Players.FirstOrDefault(x => x.Color != currentColor);
-            OtherPlayer = Players.FirstOrDefault(x => x.Color == currentColor);
+            CurrentPlayer = Players.Values.FirstOrDefault(x => x.Color != currentColor);
+            OtherPlayer = Players.Values.FirstOrDefault(x => x.Color == currentColor);
             Board.CurrentPiece = null;
         }
 
@@ -64,8 +64,8 @@ namespace Lib.Entities
         {
             Piece.Board = Board;
 
-            Players.Add(new Player(1, color1));
-            Players.Add(new Player(2, color2));
+            Players.Add(1, new Player(1, color1));
+            Players.Add(2, new Player(2, color2));
 
             ChangeTurn(color1);
 

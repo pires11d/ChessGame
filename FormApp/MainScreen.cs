@@ -1,4 +1,5 @@
 ﻿using Lib.Entities;
+using Lib.Enums;
 using Lib.Enums.Pieces;
 using System;
 using System.Drawing;
@@ -19,7 +20,7 @@ namespace FormApp
 
         private void MainScreen_Load(object sender, System.EventArgs e)
         {
-            SetControlStyle(this.Controls);
+            SetControlStyle(Controls);
 
             PlayChess();
         }
@@ -95,12 +96,10 @@ namespace FormApp
             foreach (Control control in controls)
             {
                 if (control.BackColor == Color.FromArgb(255, 192, 128))
-                    //control.BackColor = Color.PeachPuff;
                     control.BackColor = Color.FromArgb(240, 160, 100);
                 else if (control.BackColor == Color.FromArgb(128, 64, 0))
-                    //control.BackColor = Color.FromArgb(120, 80, 40);
                     control.BackColor = Color.FromArgb(120, 80, 40);
-                
+
                 if (control.ForeColor == Color.DarkOrange)
                     control.ForeColor = Color.White;
 
@@ -115,8 +114,40 @@ namespace FormApp
             tb_Info.ForeColor = Color.FromName(Game.CurrentPlayer.Color.ToString());
             //panel_ChessBoard.BackColor = Color.FromName(Game.CurrentPlayer.Color.ToString());
 
-            tb_Score1.Text = $"Pts.: {Game.Players.First().PiecesCaptured.Count}";
-            tb_Score2.Text = $"Pts.: {Game.Players.Last().PiecesCaptured.Count}";
+            UpdateScores();
+            UpdateCapturedPieces();
+        }
+
+        private void UpdateCapturedPieces()
+        {
+            tb_Score1.Text = $"Pts.: {Game.Players.Values.First().PiecesCaptured.Count}";
+            tb_Score2.Text = $"Pts.: {Game.Players.Values.Last().PiecesCaptured.Count}";
+        }
+
+        private void UpdateScores()
+        {
+            foreach (Label lbl in panel_Captured.Controls)
+            {
+                var playerIndex = int.Parse(lbl.Name.LastOrDefault().ToString());
+                var piecesCaptured = Game.Players[playerIndex].PiecesCaptured;
+
+                var types = EnumHelper.GetEnumsByNamespace("Lib.Enums.Pieces")["PieceTypeEnum"];
+                var pieceType = types.FirstOrDefault(x => x.Description == lbl.Text);
+
+                if (pieceType != null)
+                {
+                    var piecesCapturedByType = piecesCaptured.Where(x => x.Type.GetDescription() == pieceType.Description).Count();
+                    ChangeLabel(lbl, piecesCapturedByType);
+                };
+            }
+        }
+
+        private void ChangeLabel(Label labelSymbol, int quantity)
+        {
+            Label labelValue = (Label)panel_Captured.Controls.Find(labelSymbol.Name.Replace("Symbol", "Value"), false).FirstOrDefault();
+            labelValue.Text = quantity + "x";
+            labelValue.Visible = quantity > 0;
+            //labelSymbol.Visible = quantity > 0;
         }
     }
 }
