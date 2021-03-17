@@ -25,6 +25,24 @@ namespace FormApp
             PlayChess();
         }
 
+        private void SetControlStyle(Control.ControlCollection controls)
+        {
+            foreach (Control control in controls)
+            {
+                if (control.BackColor == Color.FromArgb(255, 192, 128))
+                    control.BackColor = Color.Khaki;
+                //control.BackColor = Color.FromArgb(240, 160, 100);
+                else if (control.BackColor == Color.FromArgb(128, 64, 0))
+                    control.BackColor = Color.FromArgb(120, 80, 40);
+
+                if (control.ForeColor == Color.DarkOrange)
+                    control.ForeColor = Color.White;
+
+                if (control.Controls.Count > 0)
+                    SetControlStyle(control.Controls);
+            }
+        }
+
         private void PlayChess()
         {
             Game = new Match(PieceColorEnum.Black, PieceColorEnum.White);
@@ -91,40 +109,16 @@ namespace FormApp
             }
         }
 
-        private void SetControlStyle(Control.ControlCollection controls)
-        {
-            foreach (Control control in controls)
-            {
-                if (control.BackColor == Color.FromArgb(255, 192, 128))
-                    control.BackColor = Color.FromArgb(240, 160, 100);
-                else if (control.BackColor == Color.FromArgb(128, 64, 0))
-                    control.BackColor = Color.FromArgb(120, 80, 40);
-
-                if (control.ForeColor == Color.DarkOrange)
-                    control.ForeColor = Color.White;
-
-                if (control.Controls.Count > 0)
-                    SetControlStyle(control.Controls);
-            }
-        }
-
         private void UpdateGameInfo()
         {
             tb_Info.Text = Game.CurrentPlayer.Color.GetDescription() + "s";
             tb_Info.ForeColor = Color.FromName(Game.CurrentPlayer.Color.ToString());
             //panel_ChessBoard.BackColor = Color.FromName(Game.CurrentPlayer.Color.ToString());
-
-            UpdateScores();
+            
             UpdateCapturedPieces();
         }
 
         private void UpdateCapturedPieces()
-        {
-            tb_Score1.Text = $"Pts.: {Game.Players.Values.First().PiecesCaptured.Count}";
-            tb_Score2.Text = $"Pts.: {Game.Players.Values.Last().PiecesCaptured.Count}";
-        }
-
-        private void UpdateScores()
         {
             foreach (Label lbl in panel_Captured.Controls)
             {
@@ -148,6 +142,11 @@ namespace FormApp
             labelValue.Text = quantity + "x";
             labelValue.Visible = quantity > 0;
             //labelSymbol.Visible = quantity > 0;
+        }
+
+        private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -96,8 +96,6 @@ namespace FormApp
             this.panel_ChessBoard = new System.Windows.Forms.Panel();
             this.lbl_Info = new System.Windows.Forms.Label();
             this.tb_Info = new System.Windows.Forms.Label();
-            this.tb_Score1 = new System.Windows.Forms.Label();
-            this.tb_Score2 = new System.Windows.Forms.Label();
             this.lbl_QueenValue1 = new System.Windows.Forms.Label();
             this.lbl_QueenSymbol1 = new System.Windows.Forms.Label();
             this.lbl_BishopSymbol1 = new System.Windows.Forms.Label();
@@ -597,7 +595,7 @@ namespace FormApp
             // c06
             // 
             this.c06.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.c06.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.c06.BackColor = System.Drawing.Color.Khaki;
             this.c06.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c06.Location = new System.Drawing.Point(366, 10);
             this.c06.Margin = new System.Windows.Forms.Padding(3);
@@ -665,7 +663,7 @@ namespace FormApp
             // c66
             // 
             this.c66.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.c66.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.c66.BackColor = System.Drawing.Color.Khaki;
             this.c66.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c66.ForeColor = System.Drawing.Color.DarkOrange;
             this.c66.Location = new System.Drawing.Point(366, 367);
@@ -1106,31 +1104,6 @@ namespace FormApp
             this.tb_Info.TabIndex = 1;
             this.tb_Info.Text = "-";
             // 
-            // tb_Score1
-            // 
-            this.tb_Score1.AutoSize = true;
-            this.tb_Score1.BackColor = System.Drawing.Color.Transparent;
-            this.tb_Score1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tb_Score1.Location = new System.Drawing.Point(22, 43);
-            this.tb_Score1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.tb_Score1.Name = "tb_Score1";
-            this.tb_Score1.Size = new System.Drawing.Size(48, 23);
-            this.tb_Score1.TabIndex = 1;
-            this.tb_Score1.Text = "Pts.:";
-            // 
-            // tb_Score2
-            // 
-            this.tb_Score2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tb_Score2.AutoSize = true;
-            this.tb_Score2.BackColor = System.Drawing.Color.Transparent;
-            this.tb_Score2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tb_Score2.Location = new System.Drawing.Point(22, 586);
-            this.tb_Score2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.tb_Score2.Name = "tb_Score2";
-            this.tb_Score2.Size = new System.Drawing.Size(48, 23);
-            this.tb_Score2.TabIndex = 1;
-            this.tb_Score2.Text = "Pts.:";
-            // 
             // lbl_QueenValue1
             // 
             this.lbl_QueenValue1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1420,8 +1393,6 @@ namespace FormApp
             this.panel_Main.Controls.Add(this.tb_Info);
             this.panel_Main.Controls.Add(this.splitter1);
             this.panel_Main.Controls.Add(this.panel_ChessBoard);
-            this.panel_Main.Controls.Add(this.tb_Score1);
-            this.panel_Main.Controls.Add(this.tb_Score2);
             this.panel_Main.Controls.Add(this.lbl_Info);
             this.panel_Main.Location = new System.Drawing.Point(0, 0);
             this.panel_Main.Name = "panel_Main";
@@ -1493,6 +1464,7 @@ namespace FormApp
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chess";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainScreen_FormClosing);
             this.Load += new System.EventHandler(this.MainScreen_Load);
             this.panel_ChessBoard.ResumeLayout(false);
             this.panel_Main.ResumeLayout(false);
@@ -1571,8 +1543,6 @@ namespace FormApp
         private System.Windows.Forms.Panel panel_ChessBoard;
         private System.Windows.Forms.Label lbl_Info;
         private System.Windows.Forms.Label tb_Info;
-        private System.Windows.Forms.Label tb_Score1;
-        private System.Windows.Forms.Label tb_Score2;
         private System.Windows.Forms.Label lbl_QueenValue1;
         private System.Windows.Forms.Label lbl_QueenSymbol1;
         private System.Windows.Forms.Label lbl_BishopSymbol1;
