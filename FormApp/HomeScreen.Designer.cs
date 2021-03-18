@@ -42,15 +42,14 @@ namespace FormApp
             // 
             // lbl_NewGame
             // 
-            this.lbl_NewGame.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_NewGame.AutoSize = true;
             this.lbl_NewGame.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_NewGame.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_NewGame.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_NewGame.Location = new System.Drawing.Point(3, 0);
+            this.lbl_NewGame.Location = new System.Drawing.Point(0, 0);
+            this.lbl_NewGame.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_NewGame.Name = "lbl_NewGame";
-            this.lbl_NewGame.Size = new System.Drawing.Size(461, 74);
+            this.lbl_NewGame.Size = new System.Drawing.Size(584, 100);
             this.lbl_NewGame.TabIndex = 0;
             this.lbl_NewGame.Text = "Novo jogo";
             this.lbl_NewGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -60,15 +59,14 @@ namespace FormApp
             // 
             // lbl_Score
             // 
-            this.lbl_Score.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Score.AutoSize = true;
             this.lbl_Score.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Score.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Score.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Score.Location = new System.Drawing.Point(3, 74);
+            this.lbl_Score.Location = new System.Drawing.Point(0, 100);
+            this.lbl_Score.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_Score.Name = "lbl_Score";
-            this.lbl_Score.Size = new System.Drawing.Size(461, 74);
+            this.lbl_Score.Size = new System.Drawing.Size(584, 100);
             this.lbl_Score.TabIndex = 0;
             this.lbl_Score.Text = "Ver pontuação";
             this.lbl_Score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -77,18 +75,18 @@ namespace FormApp
             // 
             // lbl_Exit
             // 
-            this.lbl_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Exit.AutoSize = true;
             this.lbl_Exit.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Exit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Exit.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Exit.Location = new System.Drawing.Point(3, 222);
+            this.lbl_Exit.Location = new System.Drawing.Point(0, 300);
+            this.lbl_Exit.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_Exit.Name = "lbl_Exit";
-            this.lbl_Exit.Size = new System.Drawing.Size(461, 76);
+            this.lbl_Exit.Size = new System.Drawing.Size(584, 101);
             this.lbl_Exit.TabIndex = 0;
             this.lbl_Exit.Text = "Sair";
             this.lbl_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Exit.Click += new System.EventHandler(this.lbl_Exit_Click);
             this.lbl_Exit.MouseEnter += new System.EventHandler(this.Label_MouseEnter);
             this.lbl_Exit.MouseLeave += new System.EventHandler(this.Label_MouseLeave);
             // 
@@ -96,32 +94,32 @@ namespace FormApp
             // 
             this.panel_Menu.ColumnCount = 1;
             this.panel_Menu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panel_Menu.Controls.Add(this.lbl_NewGame, 0, 0);
             this.panel_Menu.Controls.Add(this.lbl_Score, 0, 1);
             this.panel_Menu.Controls.Add(this.lbl_Exit, 0, 3);
             this.panel_Menu.Controls.Add(this.lbl_Config, 0, 2);
+            this.panel_Menu.Controls.Add(this.lbl_NewGame, 0, 0);
             this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Menu.Location = new System.Drawing.Point(0, 0);
+            this.panel_Menu.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.RowCount = 4;
             this.panel_Menu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.panel_Menu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.panel_Menu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.panel_Menu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panel_Menu.Size = new System.Drawing.Size(467, 298);
+            this.panel_Menu.Size = new System.Drawing.Size(584, 401);
             this.panel_Menu.TabIndex = 1;
             // 
             // lbl_Config
             // 
-            this.lbl_Config.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Config.AutoSize = true;
             this.lbl_Config.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Config.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Config.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Config.Location = new System.Drawing.Point(3, 148);
+            this.lbl_Config.Location = new System.Drawing.Point(0, 200);
+            this.lbl_Config.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_Config.Name = "lbl_Config";
-            this.lbl_Config.Size = new System.Drawing.Size(461, 74);
+            this.lbl_Config.Size = new System.Drawing.Size(584, 100);
             this.lbl_Config.TabIndex = 0;
             this.lbl_Config.Text = "Configurar";
             this.lbl_Config.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -130,17 +128,19 @@ namespace FormApp
             // 
             // HomeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(467, 298);
+            this.ClientSize = new System.Drawing.Size(584, 401);
             this.Controls.Add(this.panel_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "HomeScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.TopMost = true;
             this.panel_Menu.ResumeLayout(false);
             this.panel_Menu.PerformLayout();
             this.ResumeLayout(false);

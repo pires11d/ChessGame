@@ -8,12 +8,10 @@ namespace Lib.Entities
     public class Player
     {
         public int Type { get; set; }
-
         public string Name { get; set; }
-
         public PieceColorEnum Color { get; set; }
-
         public List<Piece> PiecesCaptured { get; set; }
+        public bool IsOnCheck { get; set; }
 
         public Player(int type, PieceColorEnum color)
         {
@@ -22,9 +20,19 @@ namespace Lib.Entities
             PiecesCaptured = new List<Piece>();
         }
 
-        public void Capture(Piece currentPiece)
+        public void Capture(Piece pieceToCapture)
         {
-            PiecesCaptured.Add(currentPiece);
+            PiecesCaptured.Add(pieceToCapture);
+        }
+
+        public void UnCapture(Piece pieceCaptured)
+        {
+            PiecesCaptured.Remove(pieceCaptured);
+        }
+
+        public override string ToString()
+        {
+            return Color.ToString();
         }
     }
 }

@@ -37,6 +37,11 @@ namespace Lib.Entities.Pieces
             Movements++;
         }
 
+        public void RemoveMovement()
+        {
+            Movements--;
+        }
+
         public override string ToString()
         {
             return Code;
@@ -54,16 +59,34 @@ namespace Lib.Entities.Pieces
             Color = DefaultColor;
         }
 
-        public bool CanMoveTo(Position position, bool canMoveFreely = true, bool canCapture = true)
+        internal bool CanMoveTo(Position position, bool canMoveFreely = true, bool canCapture = true)
         {
             if (!position.IsValid())
                 return false;
 
             var piece = Board.Piece(position);
 
-            return (canMoveFreely && piece == null) || (canCapture && piece != null && piece.DefaultColor != DefaultColor);
+            return (canMoveFreely && piece == null) || (canCapture && piece != null && piece?.DefaultColor != DefaultColor);
+        }
+
+        internal bool HasCapture(Position position)
+        {
+            if (!position.IsValid())
+                return false;
+
+            var piece = Board.Piece(position);
+
+            if (piece == null)
+                return false;
+
+            return (piece.DefaultColor != DefaultColor);
         }
 
         public abstract bool[,] PossibleMoves(Player player);
+
+        public bool IsPossibleMove(Player player, Position position)
+        {
+            return PossibleMoves(player)[position.Row, position.Column];
+        }
     }
 }

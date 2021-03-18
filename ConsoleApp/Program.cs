@@ -67,7 +67,7 @@ namespace ConsoleApp
                 if (!string.IsNullOrEmpty(input2))
                 {
                     game.Destination = new Position(input2);
-                    game.MovePiece(game.Origin, game.Destination);
+                    game.Play(game.Origin, game.Destination);
                 }
             }
             catch (Exception ex)
@@ -76,7 +76,7 @@ namespace ConsoleApp
                 Console.ReadLine();
             }
 
-            if (!game.isOver)
+            if (!game.IsOver)
                 PlayChess(game, input1, input2);
         }
 

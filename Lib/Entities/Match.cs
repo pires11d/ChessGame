@@ -26,31 +26,84 @@ namespace Lib.Entities
 
         public Position Destination { get; set; }
 
-        public Dictionary<int,Player> Players { get; set; } = new Dictionary<int, Player>();
+        public Dictionary<int, Player> Players { get; set; } = new Dictionary<int, Player>();
 
         public Player CurrentPlayer { get; set; }
 
         public Player OtherPlayer { get; set; }
 
-        public bool isOver { get; set; }
+        public bool IsOver { get; set; }
 
-        public void MovePiece(Position origin, Position destination)
+        public void Play(Position origin, Position destination)
         {
             Piece pieceToMove = Board.TakePiece(origin);
 
-            if (pieceToMove.PossibleMoves(CurrentPlayer)[destination.Row, destination.Column])
+            if (pieceToMove.IsPossibleMove(CurrentPlayer, destination))
             {
-                Piece pieceToCapture = Board.TakePiece(destination);
-                if (pieceToCapture != null)
-                    CurrentPlayer.Capture(pieceToCapture);
-                Board.AddPiece(destination, pieceToMove);
-                pieceToMove.AddMovement();
+                Piece pieceCaptured = MovePiece(pieceToMove, destination);
+                if (IsCheck())
+                {
+                    if (CurrentPlayer.IsOnCheck)
+                    {
+                        UndoMovePiece(origin, destination, pieceCaptured);
+                        this.IsOver = true;
+                        throw new ApplicationException("Xeque mate!!!");
+                    }
+                    else
+                    {
+                        UndoMovePiece(origin, destination, pieceCaptured);
+                        throw new ApplicationException("Você não pode se colocar em xeque!");
+                    }
+                }
+
                 ChangeTurn(pieceToMove.Color);
+                CurrentPlayer.IsOnCheck = IsCheck();
             }
             else
             {
                 Board.AddPiece(origin, pieceToMove);
             }
+        }
+
+        public Piece MovePiece(Piece pieceToMove, Position destination)
+        {
+            Piece pieceToCapture = Board.TakePiece(destination);
+
+            if (pieceToCapture != null)
+            {
+                CurrentPlayer.Capture(pieceToCapture);
+            }
+
+            Board.AddPiece(destination, pieceToMove);
+            pieceToMove.AddMovement();
+            return pieceToCapture;
+        }
+
+        public void UndoMovePiece(Position origin, Position destination, Piece pieceCaptured)
+        {
+            Piece pieceToUndo = Board.TakePiece(destination);
+            Board.AddPiece(origin, pieceToUndo);
+            pieceToUndo.RemoveMovement();
+
+            if (pieceCaptured != null)
+            {
+                CurrentPlayer.UnCapture(pieceCaptured);
+                Board.AddPiece(destination, pieceCaptured);
+            }
+        }
+
+        public bool IsCheck()
+        {
+            King king = Board.King(CurrentPlayer);
+            List<Piece> piecesByColor = Board.GetPiecesByColor(OtherPlayer.Color);
+
+            foreach (Piece piece in piecesByColor)
+            {
+                if (piece.IsPossibleMove(OtherPlayer, king.Position))
+                    return true;
+            }
+
+            return false;
         }
 
         private void ChangeTurn(PieceColorEnum currentColor)

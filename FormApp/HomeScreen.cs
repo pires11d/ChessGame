@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace FormApp
@@ -18,7 +14,7 @@ namespace FormApp
         private void lbl_NewGame_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var form = new MainScreen();
+            var form = new MainScreen(this);
             form.Show();
         }        
 
@@ -33,6 +29,11 @@ namespace FormApp
             var label = (Label)sender;
             label.ForeColor = Color.Black;
             label.BackColor = Color.Khaki;
+        }
+
+        private void lbl_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

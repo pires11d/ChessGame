@@ -33,7 +33,7 @@ namespace FormApp
         public bool IsValidTarget(Label label)
         {
             var target = GetPositionFromControlName(label.Name);
-            return Piece.PossibleMoves(Game.CurrentPlayer)[target.Row, target.Column];
+            return Piece.IsPossibleMove(Game.CurrentPlayer,target);
         }
     }
 }

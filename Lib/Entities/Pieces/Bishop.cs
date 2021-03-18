@@ -24,9 +24,15 @@ namespace Lib.Entities.Pieces
             {
                 p = p.TopLeft();
                 if (CanMoveTo(p))
+                {
                     matrix[p.Row, p.Column] = true;
+                    if (HasCapture(p))
+                        break;
+                }
                 else
+                {
                     break;
+                }
             }
 
             //TopRight
@@ -35,9 +41,15 @@ namespace Lib.Entities.Pieces
             {
                 p = p.TopRight();
                 if (CanMoveTo(p))
+                {
                     matrix[p.Row, p.Column] = true;
+                    if (HasCapture(p))
+                        break;
+                }
                 else
+                {
                     break;
+                }
             }
 
             //BottomLeft
@@ -46,9 +58,15 @@ namespace Lib.Entities.Pieces
             {
                 p = p.BottomLeft();
                 if (CanMoveTo(p))
+                {
                     matrix[p.Row, p.Column] = true;
+                    if (HasCapture(p))
+                        break;
+                }
                 else
+                {
                     break;
+                }
             }
 
             //BottomRight
@@ -57,9 +75,15 @@ namespace Lib.Entities.Pieces
             {
                 p = p.BottomRight();
                 if (CanMoveTo(p))
+                {
                     matrix[p.Row, p.Column] = true;
+                    if (HasCapture(p))
+                        break;
+                }
                 else
+                {
                     break;
+                }
             }
 
             return matrix;

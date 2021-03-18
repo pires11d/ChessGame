@@ -1,6 +1,7 @@
 ﻿using Lib.Entities.Pieces;
+using Lib.Enums.Pieces;
 using System;
-using System.Text;
+using System.Collections.Generic;
 
 namespace Lib.Entities
 {
@@ -72,6 +73,29 @@ namespace Lib.Entities
         {
             position.Validate();
             return Piece(position) != null;
+        }
+
+        public King King(Player player)
+        {
+            foreach (var piece in Pieces)
+            {
+                if (piece is King && piece.Color == player.Color)
+                    return (King)piece;
+            }
+            return null;
+        }
+
+        public List<Piece> GetPiecesByColor(PieceColorEnum color)
+        {
+            var pieceList = new List<Piece>();
+
+            foreach (var piece in Pieces)
+            {
+                if (piece?.Color == color)
+                    pieceList.Add(piece);
+            }
+
+            return pieceList;
         }
 
         public void Print(Player player = null)

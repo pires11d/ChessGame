@@ -10,13 +10,15 @@ namespace FormApp
 {
     public partial class MainScreen : Form
     {
-        public MainScreen()
+        public MainScreen(Form menu)
         {
             InitializeComponent();
+            Menu = menu;
         }
 
         public PieceControl CurrentControl { get; set; }
         public Match Game { get; set; }
+        public Form Menu { get; set; }
 
         private void MainScreen_Load(object sender, System.EventArgs e)
         {
@@ -30,13 +32,13 @@ namespace FormApp
             foreach (Control control in controls)
             {
                 if (control.BackColor == Color.FromArgb(255, 192, 128))
-                    control.BackColor = Color.Khaki;
-                //control.BackColor = Color.FromArgb(240, 160, 100);
-                else if (control.BackColor == Color.FromArgb(128, 64, 0))
-                    control.BackColor = Color.FromArgb(120, 80, 40);
+                    control.BackColor = Color.PaleGoldenrod;
+
+                //if (control.BackColor == Color.FromArgb(128, 64, 0))
+                //    control.BackColor = Color.FromArgb(120, 80, 40);
 
                 if (control.ForeColor == Color.DarkOrange)
-                    control.ForeColor = Color.White;
+                    control.ForeColor = Color.Goldenrod;
 
                 if (control.Controls.Count > 0)
                     SetControlStyle(control.Controls);
@@ -91,20 +93,32 @@ namespace FormApp
                 // MOVER PEÇA
                 else if (CurrentControl.IsValidTarget(label))
                 {
-                    label.Text = CurrentControl.Text;
-                    label.ForeColor = CurrentControl.ForeColor;
-                    label.Font = CurrentControl.Font;
-
                     var origin = PieceControl.GetPositionFromControlName(CurrentControl.Label.Name);
                     var destination = PieceControl.GetPositionFromControlName(label.Name);
 
-                    Game.MovePiece(origin, destination);
+                    try
+                    {
+                        Game.Play(origin, destination);
 
-                    CurrentControl.Label.Text = "";
-                    CurrentControl.Label.ForeColor = CurrentControl.ForeColor;
-                    CurrentControl = null;
+                        label.Text = CurrentControl.Text;
+                        label.ForeColor = CurrentControl.ForeColor;
+                        label.Font = CurrentControl.Font;
 
-                    UpdateGameInfo();
+                        CurrentControl.Label.Text = "";
+                        CurrentControl.Label.ForeColor = CurrentControl.ForeColor;
+                        CurrentControl = null;
+
+                        UpdateGameInfo();
+                    }
+                    catch (ApplicationException ex)
+                    {
+                        MessageBox.Show(ex.Message,"Alerta");
+                        if (Game.IsOver)
+                        {
+                            Menu.Show();
+                            this.Close();
+                        }                            
+                    }
                 }
             }
         }
@@ -114,7 +128,7 @@ namespace FormApp
             tb_Info.Text = Game.CurrentPlayer.Color.GetDescription() + "s";
             tb_Info.ForeColor = Color.FromName(Game.CurrentPlayer.Color.ToString());
             //panel_ChessBoard.BackColor = Color.FromName(Game.CurrentPlayer.Color.ToString());
-            
+
             UpdateCapturedPieces();
         }
 
@@ -146,7 +160,8 @@ namespace FormApp
 
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            if (!Game.IsOver)
+                Application.Exit();
         }
     }
 }
