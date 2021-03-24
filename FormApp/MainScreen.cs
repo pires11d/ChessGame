@@ -17,6 +17,10 @@ namespace FormApp
             Menu = menu;
         }
 
+        public Color LightColor { get; set; } = Color.PaleGoldenrod;
+        public Color DarkColor { get; set; } = Color.FromArgb(128, 64, 0);
+        public Color SelectedLightColor { get; set; } = Color.LightGray;
+        public Color SelectedDarkColor { get; set; } = Color.FromArgb(66, 66, 66);
         public PieceControl CurrentControl { get; set; }
         public Match Game { get; set; }
         public Form Menu { get; set; }
@@ -43,13 +47,7 @@ namespace FormApp
             foreach (Control control in controls)
             {
                 if (control.BackColor == Color.FromArgb(255, 192, 128))
-                    control.BackColor = Color.PaleGoldenrod;
-
-                //if (control.BackColor == Color.FromArgb(128, 64, 0))
-                //    control.BackColor = Color.FromArgb(120, 80, 40);
-
-                if (control.ForeColor == Color.DarkOrange)
-                    control.ForeColor = Color.Goldenrod;
+                    control.BackColor = LightColor;
 
                 if (control.Controls.Count > 0)
                     SetControlStyle(control.Controls);
@@ -66,10 +64,10 @@ namespace FormApp
 
         private void c00_Click(object sender, EventArgs e)
         {
-            CallByName(sender);
+            Interact(sender);
         }
 
-        private void CallByName(object obj)
+        private void Interact(object obj)
         {
             var label = (Label)obj;
 
@@ -78,18 +76,7 @@ namespace FormApp
                 // SELECIONAR PEÇA
                 if (label.Text != "")
                 {
-                    var position = PieceControl.GetPositionFromControlName(label.Name);
-                    var selectedPiece = Game.Board.Piece(position);
-                    if (selectedPiece.Color == Game.CurrentPlayer.Color)
-                    {
-                        CurrentControl = new PieceControl(label.Name);
-                        CurrentControl.ForeColor = label.ForeColor;
-                        CurrentControl.Text = label.Text;
-                        CurrentControl.Font = label.Font;
-                        CurrentControl.Label = label;
-
-                        label.ForeColor = Color.Red;
-                    }
+                    Select(label);
                 }
             }
             else
@@ -97,9 +84,7 @@ namespace FormApp
                 // DESELECIONAR PEÇA
                 if (label == CurrentControl.Label)
                 {
-                    label.ForeColor = CurrentControl.ForeColor;
-                    CurrentControl.Piece.Deselect();
-                    CurrentControl = null;
+                    Deselect(label);
                 }
                 // MOVER PEÇA
                 else if (CurrentControl.IsValidTarget(label))
@@ -111,13 +96,7 @@ namespace FormApp
                     {
                         Game.Play(origin, destination);
 
-                        label.Text = CurrentControl.Text;
-                        label.ForeColor = CurrentControl.ForeColor;
-                        label.Font = CurrentControl.Font;
-
-                        CurrentControl.Label.Text = "";
-                        CurrentControl.Label.ForeColor = CurrentControl.ForeColor;
-                        CurrentControl = null;
+                        Release(label);
 
                         UpdateGameInfo();
                     }
@@ -126,8 +105,8 @@ namespace FormApp
                         MessageBox.Show(ex.Message, "Alerta");
 
                         CurrentControl.Label.ForeColor = CurrentControl.ForeColor;
-                        CurrentControl.Piece.Deselect();
-                        CurrentControl = null;
+
+                        Deselect(label);
 
                         if (Game.IsOver)
                         {
@@ -137,6 +116,96 @@ namespace FormApp
                     }
                 }
             }
+        }
+
+        private void Release(Label label)
+        {
+            label.Text = CurrentControl.Text;
+            label.ForeColor = CurrentControl.ForeColor;
+            label.Font = CurrentControl.Font;
+
+            HidePossibleMovements();
+
+            CurrentControl.Label.Text = "";
+            CurrentControl.Label.ForeColor = CurrentControl.ForeColor;
+            CurrentControl = null;
+        }
+
+        private void Select(Label label)
+        {
+            var position = PieceControl.GetPositionFromControlName(label.Name);
+            var selectedPiece = Game.Board.Piece(position);
+            if (selectedPiece.Color == Game.CurrentPlayer.Color)
+            {
+                CurrentControl = new PieceControl(label.Name);
+                CurrentControl.ForeColor = label.ForeColor;
+                CurrentControl.Text = label.Text;
+                CurrentControl.Font = label.Font;
+                CurrentControl.Label = label;
+
+                label.ForeColor = Color.Red;
+            }
+
+            ShowPossibleMovements();
+        }
+
+        private void Deselect(Label label)
+        {
+            label.ForeColor = CurrentControl.ForeColor;
+            CurrentControl.Piece.Deselect();
+            CurrentControl = null;
+
+            HidePossibleMovements();
+        }
+
+        private void ShowPossibleMovements()
+        {
+            if (CurrentControl != null)
+            {
+                var possibleMoves = CurrentControl.Piece.PossibleMoves(Game.CurrentPlayer);
+                for (int i = 0; i < Game.Board.Rows; i++)
+                {
+                    for (int j = 0; j < Game.Board.Columns; j++)
+                    {
+                        if (possibleMoves[i, j])
+                            PaintLabel(i, j);
+                    }
+                }
+            }
+        }
+
+        private void HidePossibleMovements()
+        {
+            for (int i = 0; i < Game.Board.Rows; i++)
+            {
+                for (int j = 0; j < Game.Board.Columns; j++)
+                {
+                    UnpaintLabel(i, j);
+                }
+            }
+        }
+
+        private void PaintLabel(int i, int j)
+        {
+            Label label = GetLabel(i, j);
+            if (label.BackColor == DarkColor)
+                label.BackColor = SelectedDarkColor;
+            else if (label.BackColor == LightColor)
+                label.BackColor = SelectedLightColor;
+        }
+
+        private void UnpaintLabel(int i, int j)
+        {
+            Label label = GetLabel(i, j);
+            if (label.BackColor == SelectedDarkColor)
+                label.BackColor = DarkColor;
+            else if (label.BackColor == SelectedLightColor)
+                label.BackColor = LightColor;
+        }
+
+        private Label GetLabel(int i, int j)
+        {
+            return panel_ChessBoard.Controls.OfType<Label>().FirstOrDefault(x => x.Name == $"c{i}{j}");
         }
 
         private void UpdateGameInfo()

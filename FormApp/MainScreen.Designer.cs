@@ -202,7 +202,7 @@ namespace FormApp
             this.c60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c60.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c60.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c60.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c60.ForeColor = System.Drawing.Color.Goldenrod;
             this.c60.Location = new System.Drawing.Point(5, 449);
             this.c60.Margin = new System.Windows.Forms.Padding(0);
             this.c60.Name = "c60";
@@ -231,7 +231,7 @@ namespace FormApp
             this.c64.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c64.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c64.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c64.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c64.ForeColor = System.Drawing.Color.Goldenrod;
             this.c64.Location = new System.Drawing.Point(309, 449);
             this.c64.Margin = new System.Windows.Forms.Padding(0);
             this.c64.Name = "c64";
@@ -312,7 +312,7 @@ namespace FormApp
             this.c70.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c70.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c70.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c70.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c70.ForeColor = System.Drawing.Color.Goldenrod;
             this.c70.Location = new System.Drawing.Point(5, 523);
             this.c70.Margin = new System.Windows.Forms.Padding(0);
             this.c70.Name = "c70";
@@ -341,7 +341,7 @@ namespace FormApp
             this.c74.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c74.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c74.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c74.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c74.ForeColor = System.Drawing.Color.Goldenrod;
             this.c74.Location = new System.Drawing.Point(309, 523);
             this.c74.Margin = new System.Windows.Forms.Padding(0);
             this.c74.Name = "c74";
@@ -409,7 +409,7 @@ namespace FormApp
             this.c61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c61.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c61.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c61.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c61.ForeColor = System.Drawing.Color.Goldenrod;
             this.c61.Location = new System.Drawing.Point(81, 449);
             this.c61.Margin = new System.Windows.Forms.Padding(0);
             this.c61.Name = "c61";
@@ -437,7 +437,7 @@ namespace FormApp
             this.c65.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c65.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c65.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c65.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c65.ForeColor = System.Drawing.Color.Goldenrod;
             this.c65.Location = new System.Drawing.Point(385, 449);
             this.c65.Margin = new System.Windows.Forms.Padding(0);
             this.c65.Name = "c65";
@@ -519,7 +519,7 @@ namespace FormApp
             this.c71.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c71.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c71.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c71.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c71.ForeColor = System.Drawing.Color.Goldenrod;
             this.c71.Location = new System.Drawing.Point(81, 523);
             this.c71.Margin = new System.Windows.Forms.Padding(0);
             this.c71.Name = "c71";
@@ -547,7 +547,7 @@ namespace FormApp
             this.c75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c75.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c75.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c75.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c75.ForeColor = System.Drawing.Color.Goldenrod;
             this.c75.Location = new System.Drawing.Point(385, 523);
             this.c75.Margin = new System.Windows.Forms.Padding(0);
             this.c75.Name = "c75";
@@ -643,7 +643,7 @@ namespace FormApp
             this.c62.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c62.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c62.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c62.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c62.ForeColor = System.Drawing.Color.Goldenrod;
             this.c62.Location = new System.Drawing.Point(157, 449);
             this.c62.Margin = new System.Windows.Forms.Padding(0);
             this.c62.Name = "c62";
@@ -671,7 +671,7 @@ namespace FormApp
             this.c66.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c66.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c66.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c66.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c66.ForeColor = System.Drawing.Color.Goldenrod;
             this.c66.Location = new System.Drawing.Point(461, 449);
             this.c66.Margin = new System.Windows.Forms.Padding(0);
             this.c66.Name = "c66";
@@ -753,7 +753,7 @@ namespace FormApp
             this.c72.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c72.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c72.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c72.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c72.ForeColor = System.Drawing.Color.Goldenrod;
             this.c72.Location = new System.Drawing.Point(157, 523);
             this.c72.Margin = new System.Windows.Forms.Padding(0);
             this.c72.Name = "c72";
@@ -781,7 +781,7 @@ namespace FormApp
             this.c76.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c76.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c76.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c76.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c76.ForeColor = System.Drawing.Color.Goldenrod;
             this.c76.Location = new System.Drawing.Point(461, 523);
             this.c76.Margin = new System.Windows.Forms.Padding(0);
             this.c76.Name = "c76";
@@ -863,7 +863,7 @@ namespace FormApp
             this.c63.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c63.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c63.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c63.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c63.ForeColor = System.Drawing.Color.Goldenrod;
             this.c63.Location = new System.Drawing.Point(233, 449);
             this.c63.Margin = new System.Windows.Forms.Padding(0);
             this.c63.Name = "c63";
@@ -891,7 +891,7 @@ namespace FormApp
             this.c67.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c67.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c67.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c67.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c67.ForeColor = System.Drawing.Color.Goldenrod;
             this.c67.Location = new System.Drawing.Point(537, 449);
             this.c67.Margin = new System.Windows.Forms.Padding(0);
             this.c67.Name = "c67";
@@ -973,7 +973,7 @@ namespace FormApp
             this.c73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c73.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c73.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c73.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c73.ForeColor = System.Drawing.Color.Goldenrod;
             this.c73.Location = new System.Drawing.Point(233, 523);
             this.c73.Margin = new System.Windows.Forms.Padding(0);
             this.c73.Name = "c73";
@@ -1001,7 +1001,7 @@ namespace FormApp
             this.c77.AutoSize = true;
             this.c77.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c77.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c77.ForeColor = System.Drawing.Color.DarkOrange;
+            this.c77.ForeColor = System.Drawing.Color.Goldenrod;
             this.c77.Location = new System.Drawing.Point(537, 523);
             this.c77.Margin = new System.Windows.Forms.Padding(0);
             this.c77.Name = "c77";
