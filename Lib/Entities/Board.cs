@@ -11,7 +11,7 @@ namespace Lib.Entities
 
         public int Columns { get; set; }
 
-        private Piece[,] Pieces { get; set; }
+        internal Piece[,] Pieces { get; set; }
 
         public Board(int rows, int columns)
         {
@@ -69,23 +69,7 @@ namespace Lib.Entities
 
         internal Piece CurrentPiece { get; set; }
 
-        public bool ExistsPiece(Position position)
-        {
-            position.Validate();
-            return Piece(position) != null;
-        }
-
-        public King King(Player player)
-        {
-            foreach (var piece in Pieces)
-            {
-                if (piece is King && piece.Color == player.Color)
-                    return (King)piece;
-            }
-            return null;
-        }
-
-        public List<Piece> GetPiecesByColor(PieceColorEnum color)
+        public List<Piece> GetPieces(PieceColorEnum color)
         {
             var pieceList = new List<Piece>();
 
@@ -96,6 +80,23 @@ namespace Lib.Entities
             }
 
             return pieceList;
+        }
+
+        public King GetKing(PieceColorEnum color)
+        {
+            foreach (var piece in Pieces)
+            {
+                if (piece is King && piece.Color == color)
+                    return (King)piece;
+            }
+
+            return null;
+        }
+
+        public bool ExistsPiece(Position position)
+        {
+            position.Validate();
+            return Piece(position) != null;
         }
 
         public void Print(Player player = null)
@@ -150,7 +151,6 @@ namespace Lib.Entities
                 Console.Write("*");
             else
                 Console.Write(" ");
-
         }
 
         public void GameMode(bool isGame, int i = 0, int j = 0)

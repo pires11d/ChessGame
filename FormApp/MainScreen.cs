@@ -2,6 +2,7 @@
 using Lib.Enums;
 using Lib.Enums.Pieces;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -19,6 +20,16 @@ namespace FormApp
         public PieceControl CurrentControl { get; set; }
         public Match Game { get; set; }
         public Form Menu { get; set; }
+        public List<Label> CapturedLabels
+        {
+            get
+            {
+                var labels = new List<Label>();
+                labels.AddRange(panel_Captured1.Controls.OfType<Label>().ToList());
+                labels.AddRange(panel_Captured2.Controls.OfType<Label>().ToList());
+                return labels;
+            }
+        }
 
         private void MainScreen_Load(object sender, System.EventArgs e)
         {
@@ -112,12 +123,17 @@ namespace FormApp
                     }
                     catch (ApplicationException ex)
                     {
-                        MessageBox.Show(ex.Message,"Alerta");
+                        MessageBox.Show(ex.Message, "Alerta");
+
+                        CurrentControl.Label.ForeColor = CurrentControl.ForeColor;
+                        CurrentControl.Piece.Deselect();
+                        CurrentControl = null;
+
                         if (Game.IsOver)
                         {
                             Menu.Show();
                             this.Close();
-                        }                            
+                        }
                     }
                 }
             }
@@ -127,14 +143,15 @@ namespace FormApp
         {
             tb_Info.Text = Game.CurrentPlayer.Color.GetDescription() + "s";
             tb_Info.ForeColor = Color.FromName(Game.CurrentPlayer.Color.ToString());
-            //panel_ChessBoard.BackColor = Color.FromName(Game.CurrentPlayer.Color.ToString());
+            panel_ChessBoard.BackColor = Color.FromName(Game.CurrentPlayer.Color.ToString());
 
             UpdateCapturedPieces();
+            UpdateCheckStatus();
         }
 
         private void UpdateCapturedPieces()
         {
-            foreach (Label lbl in panel_Captured.Controls)
+            foreach (Label lbl in CapturedLabels)
             {
                 var playerIndex = int.Parse(lbl.Name.LastOrDefault().ToString());
                 var piecesCaptured = Game.Players[playerIndex].PiecesCaptured;
@@ -152,10 +169,15 @@ namespace FormApp
 
         private void ChangeLabel(Label labelSymbol, int quantity)
         {
-            Label labelValue = (Label)panel_Captured.Controls.Find(labelSymbol.Name.Replace("Symbol", "Value"), false).FirstOrDefault();
+            Label labelValue = (Label)CapturedLabels.Find(x => x.Name == labelSymbol.Name.Replace("Symbol", "Value"));
             labelValue.Text = quantity + "x";
             labelValue.Visible = quantity > 0;
-            //labelSymbol.Visible = quantity > 0;
+        }
+
+        private void UpdateCheckStatus()
+        {
+            lbl_Check1.Visible = Game.Players[1].IsOnCheck;
+            lbl_Check2.Visible = Game.Players[2].IsOnCheck;
         }
 
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)

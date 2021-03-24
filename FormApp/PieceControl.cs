@@ -14,6 +14,7 @@ namespace FormApp
         public Font Font { get; set; }
         public Piece Piece { get; set; }
         public static Match Game { get; set; }
+        public Color DefaultColor { get; internal set; }
 
         public PieceControl(string controlName)
         {

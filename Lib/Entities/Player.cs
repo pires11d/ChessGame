@@ -7,17 +7,34 @@ namespace Lib.Entities
 {
     public class Player
     {
-        public int Type { get; set; }
+        public int Number { get; set; }
         public string Name { get; set; }
         public PieceColorEnum Color { get; set; }
         public List<Piece> PiecesCaptured { get; set; }
         public bool IsOnCheck { get; set; }
+        public static Board Board { get; set; }
 
         public Player(int type, PieceColorEnum color)
         {
-            Type = type;
+            Number = type;
             Color = color;
             PiecesCaptured = new List<Piece>();
+        }
+
+        public List<Piece> Pieces
+        {
+            get
+            {
+                return Board.GetPieces(Color);
+            }
+        }
+
+        public King King
+        {
+            get
+            {
+                return Board.GetKing(Color);
+            }
         }
 
         public void Capture(Piece pieceToCapture)

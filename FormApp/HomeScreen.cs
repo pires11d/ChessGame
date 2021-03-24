@@ -35,5 +35,10 @@ namespace FormApp
         {
             Application.Exit();
         }
+
+        private void lbl_Config_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

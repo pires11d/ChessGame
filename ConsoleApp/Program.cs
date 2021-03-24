@@ -25,8 +25,8 @@ namespace ConsoleApp
 
                     if (!string.IsNullOrEmpty(input1))
                     {
-                        game.Origin = new Position(input1);
-                        var pieceFound = game.Board.Piece(game.Origin);
+                        game.Source = new Position(input1);
+                        var pieceFound = game.Board.Piece(game.Source);
 
                         if (pieceFound != null)
                         {
@@ -67,7 +67,7 @@ namespace ConsoleApp
                 if (!string.IsNullOrEmpty(input2))
                 {
                     game.Destination = new Position(input2);
-                    game.Play(game.Origin, game.Destination);
+                    game.Play(game.Source, game.Destination);
                 }
             }
             catch (Exception ex)

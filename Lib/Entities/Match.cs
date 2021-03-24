@@ -22,7 +22,7 @@ namespace Lib.Entities
 
         public Board Board { get; set; }
 
-        public Position Origin { get; set; }
+        public Position Source { get; set; }
 
         public Position Destination { get; set; }
 
@@ -34,34 +34,33 @@ namespace Lib.Entities
 
         public bool IsOver { get; set; }
 
-        public void Play(Position origin, Position destination)
+        public void Play(Position source, Position destination)
         {
-            Piece pieceToMove = Board.TakePiece(origin);
+            Piece pieceToMove = Board.TakePiece(source);
 
             if (pieceToMove.IsPossibleMove(CurrentPlayer, destination))
             {
                 Piece pieceCaptured = MovePiece(pieceToMove, destination);
                 if (IsCheck())
                 {
-                    if (CurrentPlayer.IsOnCheck)
+                    UndoMovePiece(source, destination, pieceCaptured);
+                    if (IsCheckMate())
                     {
-                        UndoMovePiece(origin, destination, pieceCaptured);
                         this.IsOver = true;
                         throw new ApplicationException("Xeque mate!!!");
                     }
                     else
                     {
-                        UndoMovePiece(origin, destination, pieceCaptured);
                         throw new ApplicationException("Você não pode se colocar em xeque!");
                     }
                 }
 
                 ChangeTurn(pieceToMove.Color);
-                CurrentPlayer.IsOnCheck = IsCheck();
+                IsCheck();
             }
             else
             {
-                Board.AddPiece(origin, pieceToMove);
+                Board.AddPiece(source, pieceToMove);
             }
         }
 
@@ -76,6 +75,7 @@ namespace Lib.Entities
 
             Board.AddPiece(destination, pieceToMove);
             pieceToMove.AddMovement();
+
             return pieceToCapture;
         }
 
@@ -94,16 +94,47 @@ namespace Lib.Entities
 
         public bool IsCheck()
         {
-            King king = Board.King(CurrentPlayer);
-            List<Piece> piecesByColor = Board.GetPiecesByColor(OtherPlayer.Color);
+            bool playerIsOnCheck = false;
+            King king = CurrentPlayer.King;
+            List<Piece> piecesByColor = OtherPlayer.Pieces;
 
             foreach (Piece piece in piecesByColor)
             {
                 if (piece.IsPossibleMove(OtherPlayer, king.Position))
-                    return true;
+                    playerIsOnCheck = true;
             }
 
-            return false;
+            Players[CurrentPlayer.Number].IsOnCheck = playerIsOnCheck;
+
+            return playerIsOnCheck;
+        }
+
+        public bool IsCheckMate()
+        {
+            foreach (Piece piece in CurrentPlayer.Pieces)
+            {
+                for (int i = 0; i < Board.Rows; i++)
+                {
+                    for (int j = 0; j < Board.Columns; j++)
+                    {
+                        Position originalPosition = piece.Position;
+                        Position availableDestination = new Position(i, j);
+
+                        if (piece.IsPossibleMove(CurrentPlayer, availableDestination))
+                        {
+                            Piece pieceToMove = Board.TakePiece(originalPosition);
+                            Piece pieceCaptured = MovePiece(pieceToMove, availableDestination);
+
+                            bool isCheck = IsCheck();
+                            UndoMovePiece(originalPosition, availableDestination, pieceCaptured);
+                            if (!isCheck)
+                                return false;
+                        }
+                    }
+                }
+            }
+
+            return true;
         }
 
         private void ChangeTurn(PieceColorEnum currentColor)
@@ -116,13 +147,14 @@ namespace Lib.Entities
         private void StartNewGame(PieceColorEnum color1, PieceColorEnum color2)
         {
             Piece.Board = Board;
+            Player.Board = Board;
 
             Players.Add(1, new Player(1, color1));
             Players.Add(2, new Player(2, color2));
 
-            ChangeTurn(color1);
-
             AddPieces(color1, color2);
+
+            ChangeTurn(color1);
         }
 
         private void AddPieces(PieceColorEnum color1, PieceColorEnum color2)

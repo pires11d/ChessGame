@@ -18,7 +18,7 @@ namespace Lib.Entities.Pieces
             var matrix = new bool[Board.Rows, Board.Columns];
             var p = new Position();
 
-            if (player.Type == 1)
+            if (player.Number == 1)
             {
                 //Bottom
                 p = this.Position.Bottom();

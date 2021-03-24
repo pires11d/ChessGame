@@ -96,46 +96,50 @@ namespace FormApp
             this.c77 = new System.Windows.Forms.Label();
             this.lbl_Info = new System.Windows.Forms.Label();
             this.tb_Info = new System.Windows.Forms.Label();
+            this.panel_Main = new System.Windows.Forms.Panel();
+            this.lbl_Check2 = new System.Windows.Forms.Label();
+            this.lbl_Check1 = new System.Windows.Forms.Label();
+            this.panel_ChessBoard = new System.Windows.Forms.TableLayoutPanel();
+            this.panel_Captured2 = new System.Windows.Forms.Panel();
             this.lbl_QueenValue1 = new System.Windows.Forms.Label();
+            this.lbl_BishopValue1 = new System.Windows.Forms.Label();
+            this.lbl_HorseValue1 = new System.Windows.Forms.Label();
+            this.lbl_RookValue1 = new System.Windows.Forms.Label();
+            this.lbl_PawnValue1 = new System.Windows.Forms.Label();
             this.lbl_QueenSymbol1 = new System.Windows.Forms.Label();
             this.lbl_BishopSymbol1 = new System.Windows.Forms.Label();
             this.lbl_HorseSymbol1 = new System.Windows.Forms.Label();
             this.lbl_RookSymbol1 = new System.Windows.Forms.Label();
             this.lbl_PawnSymbol1 = new System.Windows.Forms.Label();
-            this.lbl_BishopValue1 = new System.Windows.Forms.Label();
-            this.lbl_HorseValue1 = new System.Windows.Forms.Label();
-            this.lbl_RookValue1 = new System.Windows.Forms.Label();
-            this.lbl_PawnValue1 = new System.Windows.Forms.Label();
-            this.lbl_QueenValue2 = new System.Windows.Forms.Label();
-            this.lbl_QueenSymbol2 = new System.Windows.Forms.Label();
-            this.lbl_BishopSymbol2 = new System.Windows.Forms.Label();
-            this.lbl_BishopValue2 = new System.Windows.Forms.Label();
-            this.lbl_HorseSymbol2 = new System.Windows.Forms.Label();
-            this.lbl_RookSymbol2 = new System.Windows.Forms.Label();
-            this.lbl_HorseValue2 = new System.Windows.Forms.Label();
-            this.lbl_RookValue2 = new System.Windows.Forms.Label();
-            this.lbl_PawnSymbol2 = new System.Windows.Forms.Label();
-            this.lbl_PawnValue2 = new System.Windows.Forms.Label();
-            this.panel_Main = new System.Windows.Forms.Panel();
-            this.panel_ChessBoard = new System.Windows.Forms.TableLayoutPanel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.panel_Captured = new System.Windows.Forms.Panel();
+            this.splitter2 = new System.Windows.Forms.Splitter();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel_Captured1 = new System.Windows.Forms.Panel();
+            this.lbl_PawnValue2 = new System.Windows.Forms.Label();
+            this.lbl_RookValue2 = new System.Windows.Forms.Label();
+            this.lbl_BishopValue2 = new System.Windows.Forms.Label();
+            this.lbl_HorseValue2 = new System.Windows.Forms.Label();
+            this.lbl_QueenValue2 = new System.Windows.Forms.Label();
+            this.lbl_PawnSymbol2 = new System.Windows.Forms.Label();
+            this.lbl_RookSymbol2 = new System.Windows.Forms.Label();
+            this.lbl_HorseSymbol2 = new System.Windows.Forms.Label();
+            this.lbl_BishopSymbol2 = new System.Windows.Forms.Label();
+            this.lbl_QueenSymbol2 = new System.Windows.Forms.Label();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel_Main.SuspendLayout();
             this.panel_ChessBoard.SuspendLayout();
-            this.panel_Captured.SuspendLayout();
+            this.panel_Captured2.SuspendLayout();
+            this.panel_Captured1.SuspendLayout();
             this.SuspendLayout();
             // 
             // c04
             // 
-            this.c04.AutoSize = true;
             this.c04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c04.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c04.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c04.Location = new System.Drawing.Point(332, 0);
+            this.c04.Location = new System.Drawing.Point(309, 5);
             this.c04.Margin = new System.Windows.Forms.Padding(0);
             this.c04.Name = "c04";
-            this.c04.Size = new System.Drawing.Size(83, 83);
+            this.c04.Size = new System.Drawing.Size(76, 74);
             this.c04.TabIndex = 0;
             this.c04.Text = "♚";
             this.c04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,71 +147,66 @@ namespace FormApp
             // 
             // c40
             // 
-            this.c40.AutoSize = true;
             this.c40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c40.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c40.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c40.Location = new System.Drawing.Point(0, 332);
+            this.c40.Location = new System.Drawing.Point(5, 301);
             this.c40.Margin = new System.Windows.Forms.Padding(0);
             this.c40.Name = "c40";
-            this.c40.Size = new System.Drawing.Size(83, 83);
+            this.c40.Size = new System.Drawing.Size(76, 74);
             this.c40.TabIndex = 0;
             this.c40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c40.Click += new System.EventHandler(this.c00_Click);
             // 
             // c20
             // 
-            this.c20.AutoSize = true;
             this.c20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c20.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c20.Location = new System.Drawing.Point(0, 166);
+            this.c20.Location = new System.Drawing.Point(5, 153);
             this.c20.Margin = new System.Windows.Forms.Padding(0);
             this.c20.Name = "c20";
-            this.c20.Size = new System.Drawing.Size(83, 83);
+            this.c20.Size = new System.Drawing.Size(76, 74);
             this.c20.TabIndex = 0;
             this.c20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c20.Click += new System.EventHandler(this.c00_Click);
             // 
             // c44
             // 
-            this.c44.AutoSize = true;
             this.c44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c44.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c44.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c44.Location = new System.Drawing.Point(332, 332);
+            this.c44.Location = new System.Drawing.Point(309, 301);
             this.c44.Margin = new System.Windows.Forms.Padding(0);
             this.c44.Name = "c44";
-            this.c44.Size = new System.Drawing.Size(83, 83);
+            this.c44.Size = new System.Drawing.Size(76, 74);
             this.c44.TabIndex = 0;
             this.c44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c44.Click += new System.EventHandler(this.c00_Click);
             // 
             // c24
             // 
-            this.c24.AutoSize = true;
             this.c24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c24.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c24.Location = new System.Drawing.Point(332, 166);
+            this.c24.Location = new System.Drawing.Point(309, 153);
             this.c24.Margin = new System.Windows.Forms.Padding(0);
             this.c24.Name = "c24";
-            this.c24.Size = new System.Drawing.Size(83, 83);
+            this.c24.Size = new System.Drawing.Size(76, 74);
             this.c24.TabIndex = 0;
             this.c24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c24.Click += new System.EventHandler(this.c00_Click);
             // 
             // c60
             // 
-            this.c60.AutoSize = true;
             this.c60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c60.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c60.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c60.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c60.Location = new System.Drawing.Point(0, 498);
+            this.c60.Location = new System.Drawing.Point(5, 449);
             this.c60.Margin = new System.Windows.Forms.Padding(0);
             this.c60.Name = "c60";
-            this.c60.Size = new System.Drawing.Size(83, 83);
+            this.c60.Size = new System.Drawing.Size(76, 74);
             this.c60.TabIndex = 0;
             this.c60.Text = "♟";
             this.c60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -215,14 +214,13 @@ namespace FormApp
             // 
             // c10
             // 
-            this.c10.AutoSize = true;
             this.c10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c10.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c10.Location = new System.Drawing.Point(0, 83);
+            this.c10.Location = new System.Drawing.Point(5, 79);
             this.c10.Margin = new System.Windows.Forms.Padding(0);
             this.c10.Name = "c10";
-            this.c10.Size = new System.Drawing.Size(83, 83);
+            this.c10.Size = new System.Drawing.Size(76, 74);
             this.c10.TabIndex = 0;
             this.c10.Text = "♟";
             this.c10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -230,15 +228,14 @@ namespace FormApp
             // 
             // c64
             // 
-            this.c64.AutoSize = true;
             this.c64.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c64.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c64.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c64.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c64.Location = new System.Drawing.Point(332, 498);
+            this.c64.Location = new System.Drawing.Point(309, 449);
             this.c64.Margin = new System.Windows.Forms.Padding(0);
             this.c64.Name = "c64";
-            this.c64.Size = new System.Drawing.Size(83, 83);
+            this.c64.Size = new System.Drawing.Size(76, 74);
             this.c64.TabIndex = 0;
             this.c64.Text = "♟";
             this.c64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -246,14 +243,13 @@ namespace FormApp
             // 
             // c14
             // 
-            this.c14.AutoSize = true;
             this.c14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c14.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c14.Location = new System.Drawing.Point(332, 83);
+            this.c14.Location = new System.Drawing.Point(309, 79);
             this.c14.Margin = new System.Windows.Forms.Padding(0);
             this.c14.Name = "c14";
-            this.c14.Size = new System.Drawing.Size(83, 83);
+            this.c14.Size = new System.Drawing.Size(76, 74);
             this.c14.TabIndex = 0;
             this.c14.Text = "♟";
             this.c14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -261,71 +257,66 @@ namespace FormApp
             // 
             // c50
             // 
-            this.c50.AutoSize = true;
             this.c50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c50.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c50.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c50.Location = new System.Drawing.Point(0, 415);
+            this.c50.Location = new System.Drawing.Point(5, 375);
             this.c50.Margin = new System.Windows.Forms.Padding(0);
             this.c50.Name = "c50";
-            this.c50.Size = new System.Drawing.Size(83, 83);
+            this.c50.Size = new System.Drawing.Size(76, 74);
             this.c50.TabIndex = 0;
             this.c50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c50.Click += new System.EventHandler(this.c00_Click);
             // 
             // c30
             // 
-            this.c30.AutoSize = true;
             this.c30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c30.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c30.Location = new System.Drawing.Point(0, 249);
+            this.c30.Location = new System.Drawing.Point(5, 227);
             this.c30.Margin = new System.Windows.Forms.Padding(0);
             this.c30.Name = "c30";
-            this.c30.Size = new System.Drawing.Size(83, 83);
+            this.c30.Size = new System.Drawing.Size(76, 74);
             this.c30.TabIndex = 0;
             this.c30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c30.Click += new System.EventHandler(this.c00_Click);
             // 
             // c54
             // 
-            this.c54.AutoSize = true;
             this.c54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c54.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c54.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c54.Location = new System.Drawing.Point(332, 415);
+            this.c54.Location = new System.Drawing.Point(309, 375);
             this.c54.Margin = new System.Windows.Forms.Padding(0);
             this.c54.Name = "c54";
-            this.c54.Size = new System.Drawing.Size(83, 83);
+            this.c54.Size = new System.Drawing.Size(76, 74);
             this.c54.TabIndex = 0;
             this.c54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c54.Click += new System.EventHandler(this.c00_Click);
             // 
             // c34
             // 
-            this.c34.AutoSize = true;
             this.c34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c34.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c34.Location = new System.Drawing.Point(332, 249);
+            this.c34.Location = new System.Drawing.Point(309, 227);
             this.c34.Margin = new System.Windows.Forms.Padding(0);
             this.c34.Name = "c34";
-            this.c34.Size = new System.Drawing.Size(83, 83);
+            this.c34.Size = new System.Drawing.Size(76, 74);
             this.c34.TabIndex = 0;
             this.c34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c34.Click += new System.EventHandler(this.c00_Click);
             // 
             // c70
             // 
-            this.c70.AutoSize = true;
             this.c70.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c70.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c70.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c70.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c70.Location = new System.Drawing.Point(0, 581);
+            this.c70.Location = new System.Drawing.Point(5, 523);
             this.c70.Margin = new System.Windows.Forms.Padding(0);
             this.c70.Name = "c70";
-            this.c70.Size = new System.Drawing.Size(83, 85);
+            this.c70.Size = new System.Drawing.Size(76, 76);
             this.c70.TabIndex = 0;
             this.c70.Text = "♜";
             this.c70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -333,14 +324,13 @@ namespace FormApp
             // 
             // c01
             // 
-            this.c01.AutoSize = true;
             this.c01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c01.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c01.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c01.Location = new System.Drawing.Point(83, 0);
+            this.c01.Location = new System.Drawing.Point(81, 5);
             this.c01.Margin = new System.Windows.Forms.Padding(0);
             this.c01.Name = "c01";
-            this.c01.Size = new System.Drawing.Size(83, 83);
+            this.c01.Size = new System.Drawing.Size(76, 74);
             this.c01.TabIndex = 0;
             this.c01.Text = "♞";
             this.c01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -348,15 +338,14 @@ namespace FormApp
             // 
             // c74
             // 
-            this.c74.AutoSize = true;
             this.c74.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c74.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c74.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c74.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c74.Location = new System.Drawing.Point(332, 581);
+            this.c74.Location = new System.Drawing.Point(309, 523);
             this.c74.Margin = new System.Windows.Forms.Padding(0);
             this.c74.Name = "c74";
-            this.c74.Size = new System.Drawing.Size(83, 85);
+            this.c74.Size = new System.Drawing.Size(76, 76);
             this.c74.TabIndex = 0;
             this.c74.Text = "♚";
             this.c74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -364,28 +353,26 @@ namespace FormApp
             // 
             // c41
             // 
-            this.c41.AutoSize = true;
             this.c41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c41.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c41.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c41.Location = new System.Drawing.Point(83, 332);
+            this.c41.Location = new System.Drawing.Point(81, 301);
             this.c41.Margin = new System.Windows.Forms.Padding(0);
             this.c41.Name = "c41";
-            this.c41.Size = new System.Drawing.Size(83, 83);
+            this.c41.Size = new System.Drawing.Size(76, 74);
             this.c41.TabIndex = 0;
             this.c41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c41.Click += new System.EventHandler(this.c00_Click);
             // 
             // c05
             // 
-            this.c05.AutoSize = true;
             this.c05.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c05.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c05.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c05.Location = new System.Drawing.Point(415, 0);
+            this.c05.Location = new System.Drawing.Point(385, 5);
             this.c05.Margin = new System.Windows.Forms.Padding(0);
             this.c05.Name = "c05";
-            this.c05.Size = new System.Drawing.Size(83, 83);
+            this.c05.Size = new System.Drawing.Size(76, 74);
             this.c05.TabIndex = 0;
             this.c05.Text = "♝";
             this.c05.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -393,43 +380,40 @@ namespace FormApp
             // 
             // c45
             // 
-            this.c45.AutoSize = true;
             this.c45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c45.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c45.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c45.Location = new System.Drawing.Point(415, 332);
+            this.c45.Location = new System.Drawing.Point(385, 301);
             this.c45.Margin = new System.Windows.Forms.Padding(0);
             this.c45.Name = "c45";
-            this.c45.Size = new System.Drawing.Size(83, 83);
+            this.c45.Size = new System.Drawing.Size(76, 74);
             this.c45.TabIndex = 0;
             this.c45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c45.Click += new System.EventHandler(this.c00_Click);
             // 
             // c21
             // 
-            this.c21.AutoSize = true;
             this.c21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c21.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c21.Location = new System.Drawing.Point(83, 166);
+            this.c21.Location = new System.Drawing.Point(81, 153);
             this.c21.Margin = new System.Windows.Forms.Padding(0);
             this.c21.Name = "c21";
-            this.c21.Size = new System.Drawing.Size(83, 83);
+            this.c21.Size = new System.Drawing.Size(76, 74);
             this.c21.TabIndex = 0;
             this.c21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c21.Click += new System.EventHandler(this.c00_Click);
             // 
             // c61
             // 
-            this.c61.AutoSize = true;
             this.c61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c61.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c61.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c61.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c61.Location = new System.Drawing.Point(83, 498);
+            this.c61.Location = new System.Drawing.Point(81, 449);
             this.c61.Margin = new System.Windows.Forms.Padding(0);
             this.c61.Name = "c61";
-            this.c61.Size = new System.Drawing.Size(83, 83);
+            this.c61.Size = new System.Drawing.Size(76, 74);
             this.c61.TabIndex = 0;
             this.c61.Text = "♟";
             this.c61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -437,29 +421,27 @@ namespace FormApp
             // 
             // c25
             // 
-            this.c25.AutoSize = true;
             this.c25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c25.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c25.Location = new System.Drawing.Point(415, 166);
+            this.c25.Location = new System.Drawing.Point(385, 153);
             this.c25.Margin = new System.Windows.Forms.Padding(0);
             this.c25.Name = "c25";
-            this.c25.Size = new System.Drawing.Size(83, 83);
+            this.c25.Size = new System.Drawing.Size(76, 74);
             this.c25.TabIndex = 0;
             this.c25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c25.Click += new System.EventHandler(this.c00_Click);
             // 
             // c65
             // 
-            this.c65.AutoSize = true;
             this.c65.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c65.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c65.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c65.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c65.Location = new System.Drawing.Point(415, 498);
+            this.c65.Location = new System.Drawing.Point(385, 449);
             this.c65.Margin = new System.Windows.Forms.Padding(0);
             this.c65.Name = "c65";
-            this.c65.Size = new System.Drawing.Size(83, 83);
+            this.c65.Size = new System.Drawing.Size(76, 74);
             this.c65.TabIndex = 0;
             this.c65.Text = "♟";
             this.c65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -467,14 +449,13 @@ namespace FormApp
             // 
             // c11
             // 
-            this.c11.AutoSize = true;
             this.c11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c11.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c11.Location = new System.Drawing.Point(83, 83);
+            this.c11.Location = new System.Drawing.Point(81, 79);
             this.c11.Margin = new System.Windows.Forms.Padding(0);
             this.c11.Name = "c11";
-            this.c11.Size = new System.Drawing.Size(83, 83);
+            this.c11.Size = new System.Drawing.Size(76, 74);
             this.c11.TabIndex = 0;
             this.c11.Text = "♟";
             this.c11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -482,28 +463,26 @@ namespace FormApp
             // 
             // c51
             // 
-            this.c51.AutoSize = true;
             this.c51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c51.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c51.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c51.Location = new System.Drawing.Point(83, 415);
+            this.c51.Location = new System.Drawing.Point(81, 375);
             this.c51.Margin = new System.Windows.Forms.Padding(0);
             this.c51.Name = "c51";
-            this.c51.Size = new System.Drawing.Size(83, 83);
+            this.c51.Size = new System.Drawing.Size(76, 74);
             this.c51.TabIndex = 0;
             this.c51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c51.Click += new System.EventHandler(this.c00_Click);
             // 
             // c15
             // 
-            this.c15.AutoSize = true;
             this.c15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c15.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c15.Location = new System.Drawing.Point(415, 83);
+            this.c15.Location = new System.Drawing.Point(385, 79);
             this.c15.Margin = new System.Windows.Forms.Padding(0);
             this.c15.Name = "c15";
-            this.c15.Size = new System.Drawing.Size(83, 83);
+            this.c15.Size = new System.Drawing.Size(76, 74);
             this.c15.TabIndex = 0;
             this.c15.Text = "♟";
             this.c15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -511,43 +490,40 @@ namespace FormApp
             // 
             // c55
             // 
-            this.c55.AutoSize = true;
             this.c55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c55.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c55.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c55.Location = new System.Drawing.Point(415, 415);
+            this.c55.Location = new System.Drawing.Point(385, 375);
             this.c55.Margin = new System.Windows.Forms.Padding(0);
             this.c55.Name = "c55";
-            this.c55.Size = new System.Drawing.Size(83, 83);
+            this.c55.Size = new System.Drawing.Size(76, 74);
             this.c55.TabIndex = 0;
             this.c55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c55.Click += new System.EventHandler(this.c00_Click);
             // 
             // c31
             // 
-            this.c31.AutoSize = true;
             this.c31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c31.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c31.Location = new System.Drawing.Point(83, 249);
+            this.c31.Location = new System.Drawing.Point(81, 227);
             this.c31.Margin = new System.Windows.Forms.Padding(0);
             this.c31.Name = "c31";
-            this.c31.Size = new System.Drawing.Size(83, 83);
+            this.c31.Size = new System.Drawing.Size(76, 74);
             this.c31.TabIndex = 0;
             this.c31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c31.Click += new System.EventHandler(this.c00_Click);
             // 
             // c71
             // 
-            this.c71.AutoSize = true;
             this.c71.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c71.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c71.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c71.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c71.Location = new System.Drawing.Point(83, 581);
+            this.c71.Location = new System.Drawing.Point(81, 523);
             this.c71.Margin = new System.Windows.Forms.Padding(0);
             this.c71.Name = "c71";
-            this.c71.Size = new System.Drawing.Size(83, 85);
+            this.c71.Size = new System.Drawing.Size(76, 76);
             this.c71.TabIndex = 0;
             this.c71.Text = "♞";
             this.c71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -555,29 +531,27 @@ namespace FormApp
             // 
             // c35
             // 
-            this.c35.AutoSize = true;
             this.c35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c35.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c35.Location = new System.Drawing.Point(415, 249);
+            this.c35.Location = new System.Drawing.Point(385, 227);
             this.c35.Margin = new System.Windows.Forms.Padding(0);
             this.c35.Name = "c35";
-            this.c35.Size = new System.Drawing.Size(83, 83);
+            this.c35.Size = new System.Drawing.Size(76, 74);
             this.c35.TabIndex = 0;
             this.c35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c35.Click += new System.EventHandler(this.c00_Click);
             // 
             // c75
             // 
-            this.c75.AutoSize = true;
             this.c75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c75.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c75.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c75.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c75.Location = new System.Drawing.Point(415, 581);
+            this.c75.Location = new System.Drawing.Point(385, 523);
             this.c75.Margin = new System.Windows.Forms.Padding(0);
             this.c75.Name = "c75";
-            this.c75.Size = new System.Drawing.Size(83, 85);
+            this.c75.Size = new System.Drawing.Size(76, 76);
             this.c75.TabIndex = 0;
             this.c75.Text = "♝";
             this.c75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -585,14 +559,13 @@ namespace FormApp
             // 
             // c00
             // 
-            this.c00.AutoSize = true;
             this.c00.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c00.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c00.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c00.Location = new System.Drawing.Point(0, 0);
+            this.c00.Location = new System.Drawing.Point(5, 5);
             this.c00.Margin = new System.Windows.Forms.Padding(0);
             this.c00.Name = "c00";
-            this.c00.Size = new System.Drawing.Size(83, 83);
+            this.c00.Size = new System.Drawing.Size(76, 74);
             this.c00.TabIndex = 0;
             this.c00.Text = "♜";
             this.c00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -600,14 +573,13 @@ namespace FormApp
             // 
             // c02
             // 
-            this.c02.AutoSize = true;
             this.c02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c02.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c02.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c02.Location = new System.Drawing.Point(166, 0);
+            this.c02.Location = new System.Drawing.Point(157, 5);
             this.c02.Margin = new System.Windows.Forms.Padding(0);
             this.c02.Name = "c02";
-            this.c02.Size = new System.Drawing.Size(83, 83);
+            this.c02.Size = new System.Drawing.Size(76, 74);
             this.c02.TabIndex = 0;
             this.c02.Text = "♝";
             this.c02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -615,28 +587,26 @@ namespace FormApp
             // 
             // c42
             // 
-            this.c42.AutoSize = true;
             this.c42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c42.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c42.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c42.Location = new System.Drawing.Point(166, 332);
+            this.c42.Location = new System.Drawing.Point(157, 301);
             this.c42.Margin = new System.Windows.Forms.Padding(0);
             this.c42.Name = "c42";
-            this.c42.Size = new System.Drawing.Size(83, 83);
+            this.c42.Size = new System.Drawing.Size(76, 74);
             this.c42.TabIndex = 0;
             this.c42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c42.Click += new System.EventHandler(this.c00_Click);
             // 
             // c06
             // 
-            this.c06.AutoSize = true;
             this.c06.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c06.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c06.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c06.Location = new System.Drawing.Point(498, 0);
+            this.c06.Location = new System.Drawing.Point(461, 5);
             this.c06.Margin = new System.Windows.Forms.Padding(0);
             this.c06.Name = "c06";
-            this.c06.Size = new System.Drawing.Size(83, 83);
+            this.c06.Size = new System.Drawing.Size(76, 74);
             this.c06.TabIndex = 0;
             this.c06.Text = "♞";
             this.c06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -644,43 +614,40 @@ namespace FormApp
             // 
             // c46
             // 
-            this.c46.AutoSize = true;
             this.c46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c46.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c46.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c46.Location = new System.Drawing.Point(498, 332);
+            this.c46.Location = new System.Drawing.Point(461, 301);
             this.c46.Margin = new System.Windows.Forms.Padding(0);
             this.c46.Name = "c46";
-            this.c46.Size = new System.Drawing.Size(83, 83);
+            this.c46.Size = new System.Drawing.Size(76, 74);
             this.c46.TabIndex = 0;
             this.c46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c46.Click += new System.EventHandler(this.c00_Click);
             // 
             // c22
             // 
-            this.c22.AutoSize = true;
             this.c22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c22.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c22.Location = new System.Drawing.Point(166, 166);
+            this.c22.Location = new System.Drawing.Point(157, 153);
             this.c22.Margin = new System.Windows.Forms.Padding(0);
             this.c22.Name = "c22";
-            this.c22.Size = new System.Drawing.Size(83, 83);
+            this.c22.Size = new System.Drawing.Size(76, 74);
             this.c22.TabIndex = 0;
             this.c22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c22.Click += new System.EventHandler(this.c00_Click);
             // 
             // c62
             // 
-            this.c62.AutoSize = true;
             this.c62.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c62.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c62.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c62.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c62.Location = new System.Drawing.Point(166, 498);
+            this.c62.Location = new System.Drawing.Point(157, 449);
             this.c62.Margin = new System.Windows.Forms.Padding(0);
             this.c62.Name = "c62";
-            this.c62.Size = new System.Drawing.Size(83, 83);
+            this.c62.Size = new System.Drawing.Size(76, 74);
             this.c62.TabIndex = 0;
             this.c62.Text = "♟";
             this.c62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -688,29 +655,27 @@ namespace FormApp
             // 
             // c26
             // 
-            this.c26.AutoSize = true;
             this.c26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c26.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c26.Location = new System.Drawing.Point(498, 166);
+            this.c26.Location = new System.Drawing.Point(461, 153);
             this.c26.Margin = new System.Windows.Forms.Padding(0);
             this.c26.Name = "c26";
-            this.c26.Size = new System.Drawing.Size(83, 83);
+            this.c26.Size = new System.Drawing.Size(76, 74);
             this.c26.TabIndex = 0;
             this.c26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c26.Click += new System.EventHandler(this.c00_Click);
             // 
             // c66
             // 
-            this.c66.AutoSize = true;
             this.c66.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c66.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c66.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c66.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c66.Location = new System.Drawing.Point(498, 498);
+            this.c66.Location = new System.Drawing.Point(461, 449);
             this.c66.Margin = new System.Windows.Forms.Padding(0);
             this.c66.Name = "c66";
-            this.c66.Size = new System.Drawing.Size(83, 83);
+            this.c66.Size = new System.Drawing.Size(76, 74);
             this.c66.TabIndex = 0;
             this.c66.Text = "♟";
             this.c66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -718,14 +683,13 @@ namespace FormApp
             // 
             // c12
             // 
-            this.c12.AutoSize = true;
             this.c12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c12.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c12.Location = new System.Drawing.Point(166, 83);
+            this.c12.Location = new System.Drawing.Point(157, 79);
             this.c12.Margin = new System.Windows.Forms.Padding(0);
             this.c12.Name = "c12";
-            this.c12.Size = new System.Drawing.Size(83, 83);
+            this.c12.Size = new System.Drawing.Size(76, 74);
             this.c12.TabIndex = 0;
             this.c12.Text = "♟";
             this.c12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -733,28 +697,26 @@ namespace FormApp
             // 
             // c52
             // 
-            this.c52.AutoSize = true;
             this.c52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c52.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c52.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c52.Location = new System.Drawing.Point(166, 415);
+            this.c52.Location = new System.Drawing.Point(157, 375);
             this.c52.Margin = new System.Windows.Forms.Padding(0);
             this.c52.Name = "c52";
-            this.c52.Size = new System.Drawing.Size(83, 83);
+            this.c52.Size = new System.Drawing.Size(76, 74);
             this.c52.TabIndex = 0;
             this.c52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c52.Click += new System.EventHandler(this.c00_Click);
             // 
             // c16
             // 
-            this.c16.AutoSize = true;
             this.c16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c16.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c16.Location = new System.Drawing.Point(498, 83);
+            this.c16.Location = new System.Drawing.Point(461, 79);
             this.c16.Margin = new System.Windows.Forms.Padding(0);
             this.c16.Name = "c16";
-            this.c16.Size = new System.Drawing.Size(83, 83);
+            this.c16.Size = new System.Drawing.Size(76, 74);
             this.c16.TabIndex = 0;
             this.c16.Text = "♟";
             this.c16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -762,43 +724,40 @@ namespace FormApp
             // 
             // c56
             // 
-            this.c56.AutoSize = true;
             this.c56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c56.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c56.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c56.Location = new System.Drawing.Point(498, 415);
+            this.c56.Location = new System.Drawing.Point(461, 375);
             this.c56.Margin = new System.Windows.Forms.Padding(0);
             this.c56.Name = "c56";
-            this.c56.Size = new System.Drawing.Size(83, 83);
+            this.c56.Size = new System.Drawing.Size(76, 74);
             this.c56.TabIndex = 0;
             this.c56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c56.Click += new System.EventHandler(this.c00_Click);
             // 
             // c32
             // 
-            this.c32.AutoSize = true;
             this.c32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c32.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c32.Location = new System.Drawing.Point(166, 249);
+            this.c32.Location = new System.Drawing.Point(157, 227);
             this.c32.Margin = new System.Windows.Forms.Padding(0);
             this.c32.Name = "c32";
-            this.c32.Size = new System.Drawing.Size(83, 83);
+            this.c32.Size = new System.Drawing.Size(76, 74);
             this.c32.TabIndex = 0;
             this.c32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c32.Click += new System.EventHandler(this.c00_Click);
             // 
             // c72
             // 
-            this.c72.AutoSize = true;
             this.c72.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c72.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c72.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c72.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c72.Location = new System.Drawing.Point(166, 581);
+            this.c72.Location = new System.Drawing.Point(157, 523);
             this.c72.Margin = new System.Windows.Forms.Padding(0);
             this.c72.Name = "c72";
-            this.c72.Size = new System.Drawing.Size(83, 85);
+            this.c72.Size = new System.Drawing.Size(76, 76);
             this.c72.TabIndex = 0;
             this.c72.Text = "♝";
             this.c72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -806,29 +765,27 @@ namespace FormApp
             // 
             // c36
             // 
-            this.c36.AutoSize = true;
             this.c36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c36.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c36.Location = new System.Drawing.Point(498, 249);
+            this.c36.Location = new System.Drawing.Point(461, 227);
             this.c36.Margin = new System.Windows.Forms.Padding(0);
             this.c36.Name = "c36";
-            this.c36.Size = new System.Drawing.Size(83, 83);
+            this.c36.Size = new System.Drawing.Size(76, 74);
             this.c36.TabIndex = 0;
             this.c36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c36.Click += new System.EventHandler(this.c00_Click);
             // 
             // c76
             // 
-            this.c76.AutoSize = true;
             this.c76.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c76.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c76.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c76.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c76.Location = new System.Drawing.Point(498, 581);
+            this.c76.Location = new System.Drawing.Point(461, 523);
             this.c76.Margin = new System.Windows.Forms.Padding(0);
             this.c76.Name = "c76";
-            this.c76.Size = new System.Drawing.Size(83, 85);
+            this.c76.Size = new System.Drawing.Size(76, 76);
             this.c76.TabIndex = 0;
             this.c76.Text = "♞";
             this.c76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -836,14 +793,13 @@ namespace FormApp
             // 
             // c03
             // 
-            this.c03.AutoSize = true;
             this.c03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c03.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c03.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c03.Location = new System.Drawing.Point(249, 0);
+            this.c03.Location = new System.Drawing.Point(233, 5);
             this.c03.Margin = new System.Windows.Forms.Padding(0);
             this.c03.Name = "c03";
-            this.c03.Size = new System.Drawing.Size(83, 83);
+            this.c03.Size = new System.Drawing.Size(76, 74);
             this.c03.TabIndex = 0;
             this.c03.Text = "♛";
             this.c03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -851,28 +807,26 @@ namespace FormApp
             // 
             // c43
             // 
-            this.c43.AutoSize = true;
             this.c43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c43.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c43.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c43.Location = new System.Drawing.Point(249, 332);
+            this.c43.Location = new System.Drawing.Point(233, 301);
             this.c43.Margin = new System.Windows.Forms.Padding(0);
             this.c43.Name = "c43";
-            this.c43.Size = new System.Drawing.Size(83, 83);
+            this.c43.Size = new System.Drawing.Size(76, 74);
             this.c43.TabIndex = 0;
             this.c43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c43.Click += new System.EventHandler(this.c00_Click);
             // 
             // c07
             // 
-            this.c07.AutoSize = true;
             this.c07.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c07.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c07.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c07.Location = new System.Drawing.Point(581, 0);
+            this.c07.Location = new System.Drawing.Point(537, 5);
             this.c07.Margin = new System.Windows.Forms.Padding(0);
             this.c07.Name = "c07";
-            this.c07.Size = new System.Drawing.Size(85, 83);
+            this.c07.Size = new System.Drawing.Size(78, 74);
             this.c07.TabIndex = 0;
             this.c07.Text = "♜";
             this.c07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -880,43 +834,40 @@ namespace FormApp
             // 
             // c47
             // 
-            this.c47.AutoSize = true;
             this.c47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c47.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c47.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c47.Location = new System.Drawing.Point(581, 332);
+            this.c47.Location = new System.Drawing.Point(537, 301);
             this.c47.Margin = new System.Windows.Forms.Padding(0);
             this.c47.Name = "c47";
-            this.c47.Size = new System.Drawing.Size(85, 83);
+            this.c47.Size = new System.Drawing.Size(78, 74);
             this.c47.TabIndex = 0;
             this.c47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c47.Click += new System.EventHandler(this.c00_Click);
             // 
             // c23
             // 
-            this.c23.AutoSize = true;
             this.c23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c23.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c23.Location = new System.Drawing.Point(249, 166);
+            this.c23.Location = new System.Drawing.Point(233, 153);
             this.c23.Margin = new System.Windows.Forms.Padding(0);
             this.c23.Name = "c23";
-            this.c23.Size = new System.Drawing.Size(83, 83);
+            this.c23.Size = new System.Drawing.Size(76, 74);
             this.c23.TabIndex = 0;
             this.c23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c23.Click += new System.EventHandler(this.c00_Click);
             // 
             // c63
             // 
-            this.c63.AutoSize = true;
             this.c63.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c63.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c63.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c63.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c63.Location = new System.Drawing.Point(249, 498);
+            this.c63.Location = new System.Drawing.Point(233, 449);
             this.c63.Margin = new System.Windows.Forms.Padding(0);
             this.c63.Name = "c63";
-            this.c63.Size = new System.Drawing.Size(83, 83);
+            this.c63.Size = new System.Drawing.Size(76, 74);
             this.c63.TabIndex = 0;
             this.c63.Text = "♟";
             this.c63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -924,29 +875,27 @@ namespace FormApp
             // 
             // c27
             // 
-            this.c27.AutoSize = true;
             this.c27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c27.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c27.Location = new System.Drawing.Point(581, 166);
+            this.c27.Location = new System.Drawing.Point(537, 153);
             this.c27.Margin = new System.Windows.Forms.Padding(0);
             this.c27.Name = "c27";
-            this.c27.Size = new System.Drawing.Size(85, 83);
+            this.c27.Size = new System.Drawing.Size(78, 74);
             this.c27.TabIndex = 0;
             this.c27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c27.Click += new System.EventHandler(this.c00_Click);
             // 
             // c67
             // 
-            this.c67.AutoSize = true;
             this.c67.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.c67.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c67.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c67.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c67.Location = new System.Drawing.Point(581, 498);
+            this.c67.Location = new System.Drawing.Point(537, 449);
             this.c67.Margin = new System.Windows.Forms.Padding(0);
             this.c67.Name = "c67";
-            this.c67.Size = new System.Drawing.Size(85, 83);
+            this.c67.Size = new System.Drawing.Size(78, 74);
             this.c67.TabIndex = 0;
             this.c67.Text = "♟";
             this.c67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -954,14 +903,13 @@ namespace FormApp
             // 
             // c13
             // 
-            this.c13.AutoSize = true;
             this.c13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c13.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c13.Location = new System.Drawing.Point(249, 83);
+            this.c13.Location = new System.Drawing.Point(233, 79);
             this.c13.Margin = new System.Windows.Forms.Padding(0);
             this.c13.Name = "c13";
-            this.c13.Size = new System.Drawing.Size(83, 83);
+            this.c13.Size = new System.Drawing.Size(76, 74);
             this.c13.TabIndex = 0;
             this.c13.Text = "♟";
             this.c13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -969,28 +917,26 @@ namespace FormApp
             // 
             // c53
             // 
-            this.c53.AutoSize = true;
             this.c53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c53.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c53.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c53.Location = new System.Drawing.Point(249, 415);
+            this.c53.Location = new System.Drawing.Point(233, 375);
             this.c53.Margin = new System.Windows.Forms.Padding(0);
             this.c53.Name = "c53";
-            this.c53.Size = new System.Drawing.Size(83, 83);
+            this.c53.Size = new System.Drawing.Size(76, 74);
             this.c53.TabIndex = 0;
             this.c53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c53.Click += new System.EventHandler(this.c00_Click);
             // 
             // c17
             // 
-            this.c17.AutoSize = true;
             this.c17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c17.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c17.Location = new System.Drawing.Point(581, 83);
+            this.c17.Location = new System.Drawing.Point(537, 79);
             this.c17.Margin = new System.Windows.Forms.Padding(0);
             this.c17.Name = "c17";
-            this.c17.Size = new System.Drawing.Size(85, 83);
+            this.c17.Size = new System.Drawing.Size(78, 74);
             this.c17.TabIndex = 0;
             this.c17.Text = "♟";
             this.c17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -998,43 +944,40 @@ namespace FormApp
             // 
             // c57
             // 
-            this.c57.AutoSize = true;
             this.c57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c57.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c57.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c57.Location = new System.Drawing.Point(581, 415);
+            this.c57.Location = new System.Drawing.Point(537, 375);
             this.c57.Margin = new System.Windows.Forms.Padding(0);
             this.c57.Name = "c57";
-            this.c57.Size = new System.Drawing.Size(85, 83);
+            this.c57.Size = new System.Drawing.Size(78, 74);
             this.c57.TabIndex = 0;
             this.c57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c57.Click += new System.EventHandler(this.c00_Click);
             // 
             // c33
             // 
-            this.c33.AutoSize = true;
             this.c33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c33.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c33.Location = new System.Drawing.Point(249, 249);
+            this.c33.Location = new System.Drawing.Point(233, 227);
             this.c33.Margin = new System.Windows.Forms.Padding(0);
             this.c33.Name = "c33";
-            this.c33.Size = new System.Drawing.Size(83, 83);
+            this.c33.Size = new System.Drawing.Size(76, 74);
             this.c33.TabIndex = 0;
             this.c33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c33.Click += new System.EventHandler(this.c00_Click);
             // 
             // c73
             // 
-            this.c73.AutoSize = true;
             this.c73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c73.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c73.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c73.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c73.Location = new System.Drawing.Point(249, 581);
+            this.c73.Location = new System.Drawing.Point(233, 523);
             this.c73.Margin = new System.Windows.Forms.Padding(0);
             this.c73.Name = "c73";
-            this.c73.Size = new System.Drawing.Size(83, 85);
+            this.c73.Size = new System.Drawing.Size(76, 76);
             this.c73.TabIndex = 0;
             this.c73.Text = "♛";
             this.c73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1042,14 +985,13 @@ namespace FormApp
             // 
             // c37
             // 
-            this.c37.AutoSize = true;
             this.c37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.c37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c37.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c37.Location = new System.Drawing.Point(581, 249);
+            this.c37.Location = new System.Drawing.Point(537, 227);
             this.c37.Margin = new System.Windows.Forms.Padding(0);
             this.c37.Name = "c37";
-            this.c37.Size = new System.Drawing.Size(85, 83);
+            this.c37.Size = new System.Drawing.Size(78, 74);
             this.c37.TabIndex = 0;
             this.c37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.c37.Click += new System.EventHandler(this.c00_Click);
@@ -1058,13 +1000,12 @@ namespace FormApp
             // 
             this.c77.AutoSize = true;
             this.c77.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.c77.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c77.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.c77.ForeColor = System.Drawing.Color.DarkOrange;
-            this.c77.Location = new System.Drawing.Point(581, 581);
+            this.c77.Location = new System.Drawing.Point(537, 523);
             this.c77.Margin = new System.Windows.Forms.Padding(0);
             this.c77.Name = "c77";
-            this.c77.Size = new System.Drawing.Size(85, 85);
+            this.c77.Size = new System.Drawing.Size(78, 76);
             this.c77.TabIndex = 0;
             this.c77.Text = "♜";
             this.c77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1072,11 +1013,11 @@ namespace FormApp
             // 
             // lbl_Info
             // 
-            this.lbl_Info.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Info.Location = new System.Drawing.Point(255, 20);
+            this.lbl_Info.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Info.Location = new System.Drawing.Point(214, 0);
             this.lbl_Info.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Info.Name = "lbl_Info";
-            this.lbl_Info.Size = new System.Drawing.Size(278, 48);
+            this.lbl_Info.Size = new System.Drawing.Size(245, 38);
             this.lbl_Info.TabIndex = 1;
             this.lbl_Info.Text = "Jogador da vez:";
             // 
@@ -1085,292 +1026,12 @@ namespace FormApp
             this.tb_Info.AutoSize = true;
             this.tb_Info.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tb_Info.ForeColor = System.Drawing.Color.White;
-            this.tb_Info.Location = new System.Drawing.Point(537, 20);
+            this.tb_Info.Location = new System.Drawing.Point(478, 0);
             this.tb_Info.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tb_Info.Name = "tb_Info";
-            this.tb_Info.Size = new System.Drawing.Size(30, 38);
+            this.tb_Info.Size = new System.Drawing.Size(25, 32);
             this.tb_Info.TabIndex = 1;
             this.tb_Info.Text = "-";
-            // 
-            // lbl_QueenValue1
-            // 
-            this.lbl_QueenValue1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_QueenValue1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_QueenValue1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_QueenValue1.Location = new System.Drawing.Point(81, 30);
-            this.lbl_QueenValue1.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_QueenValue1.Name = "lbl_QueenValue1";
-            this.lbl_QueenValue1.Size = new System.Drawing.Size(82, 61);
-            this.lbl_QueenValue1.TabIndex = 0;
-            this.lbl_QueenValue1.Text = "1x";
-            this.lbl_QueenValue1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_QueenValue1.Click += new System.EventHandler(this.c00_Click);
-            // 
-            // lbl_QueenSymbol1
-            // 
-            this.lbl_QueenSymbol1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_QueenSymbol1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_QueenSymbol1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_QueenSymbol1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl_QueenSymbol1.Location = new System.Drawing.Point(164, 20);
-            this.lbl_QueenSymbol1.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_QueenSymbol1.Name = "lbl_QueenSymbol1";
-            this.lbl_QueenSymbol1.Size = new System.Drawing.Size(74, 76);
-            this.lbl_QueenSymbol1.TabIndex = 0;
-            this.lbl_QueenSymbol1.Text = "♛";
-            this.lbl_QueenSymbol1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_QueenSymbol1.Click += new System.EventHandler(this.c00_Click);
-            // 
-            // lbl_BishopSymbol1
-            // 
-            this.lbl_BishopSymbol1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_BishopSymbol1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_BishopSymbol1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_BishopSymbol1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl_BishopSymbol1.Location = new System.Drawing.Point(164, 90);
-            this.lbl_BishopSymbol1.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_BishopSymbol1.Name = "lbl_BishopSymbol1";
-            this.lbl_BishopSymbol1.Size = new System.Drawing.Size(74, 76);
-            this.lbl_BishopSymbol1.TabIndex = 0;
-            this.lbl_BishopSymbol1.Text = "♝";
-            this.lbl_BishopSymbol1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_BishopSymbol1.Click += new System.EventHandler(this.c00_Click);
-            // 
-            // lbl_HorseSymbol1
-            // 
-            this.lbl_HorseSymbol1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_HorseSymbol1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_HorseSymbol1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_HorseSymbol1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl_HorseSymbol1.Location = new System.Drawing.Point(164, 158);
-            this.lbl_HorseSymbol1.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_HorseSymbol1.Name = "lbl_HorseSymbol1";
-            this.lbl_HorseSymbol1.Size = new System.Drawing.Size(74, 76);
-            this.lbl_HorseSymbol1.TabIndex = 0;
-            this.lbl_HorseSymbol1.Text = "♞";
-            this.lbl_HorseSymbol1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_HorseSymbol1.Click += new System.EventHandler(this.c00_Click);
-            // 
-            // lbl_RookSymbol1
-            // 
-            this.lbl_RookSymbol1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_RookSymbol1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_RookSymbol1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_RookSymbol1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl_RookSymbol1.Location = new System.Drawing.Point(164, 226);
-            this.lbl_RookSymbol1.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_RookSymbol1.Name = "lbl_RookSymbol1";
-            this.lbl_RookSymbol1.Size = new System.Drawing.Size(74, 76);
-            this.lbl_RookSymbol1.TabIndex = 0;
-            this.lbl_RookSymbol1.Text = "♜";
-            this.lbl_RookSymbol1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_RookSymbol1.Click += new System.EventHandler(this.c00_Click);
-            // 
-            // lbl_PawnSymbol1
-            // 
-            this.lbl_PawnSymbol1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_PawnSymbol1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_PawnSymbol1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_PawnSymbol1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl_PawnSymbol1.Location = new System.Drawing.Point(164, 295);
-            this.lbl_PawnSymbol1.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_PawnSymbol1.Name = "lbl_PawnSymbol1";
-            this.lbl_PawnSymbol1.Size = new System.Drawing.Size(74, 76);
-            this.lbl_PawnSymbol1.TabIndex = 0;
-            this.lbl_PawnSymbol1.Text = "♟";
-            this.lbl_PawnSymbol1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_PawnSymbol1.Click += new System.EventHandler(this.c00_Click);
-            // 
-            // lbl_BishopValue1
-            // 
-            this.lbl_BishopValue1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_BishopValue1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_BishopValue1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_BishopValue1.Location = new System.Drawing.Point(81, 100);
-            this.lbl_BishopValue1.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_BishopValue1.Name = "lbl_BishopValue1";
-            this.lbl_BishopValue1.Size = new System.Drawing.Size(82, 61);
-            this.lbl_BishopValue1.TabIndex = 0;
-            this.lbl_BishopValue1.Text = "1x";
-            this.lbl_BishopValue1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_BishopValue1.Click += new System.EventHandler(this.c00_Click);
-            // 
-            // lbl_HorseValue1
-            // 
-            this.lbl_HorseValue1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_HorseValue1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_HorseValue1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_HorseValue1.Location = new System.Drawing.Point(81, 168);
-            this.lbl_HorseValue1.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_HorseValue1.Name = "lbl_HorseValue1";
-            this.lbl_HorseValue1.Size = new System.Drawing.Size(82, 61);
-            this.lbl_HorseValue1.TabIndex = 0;
-            this.lbl_HorseValue1.Text = "1x";
-            this.lbl_HorseValue1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_HorseValue1.Click += new System.EventHandler(this.c00_Click);
-            // 
-            // lbl_RookValue1
-            // 
-            this.lbl_RookValue1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_RookValue1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_RookValue1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_RookValue1.Location = new System.Drawing.Point(81, 236);
-            this.lbl_RookValue1.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_RookValue1.Name = "lbl_RookValue1";
-            this.lbl_RookValue1.Size = new System.Drawing.Size(82, 61);
-            this.lbl_RookValue1.TabIndex = 0;
-            this.lbl_RookValue1.Text = "1x";
-            this.lbl_RookValue1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_RookValue1.Click += new System.EventHandler(this.c00_Click);
-            // 
-            // lbl_PawnValue1
-            // 
-            this.lbl_PawnValue1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_PawnValue1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_PawnValue1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_PawnValue1.Location = new System.Drawing.Point(81, 305);
-            this.lbl_PawnValue1.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_PawnValue1.Name = "lbl_PawnValue1";
-            this.lbl_PawnValue1.Size = new System.Drawing.Size(82, 61);
-            this.lbl_PawnValue1.TabIndex = 0;
-            this.lbl_PawnValue1.Text = "1x";
-            this.lbl_PawnValue1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_PawnValue1.Click += new System.EventHandler(this.c00_Click);
-            // 
-            // lbl_QueenValue2
-            // 
-            this.lbl_QueenValue2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_QueenValue2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_QueenValue2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_QueenValue2.Location = new System.Drawing.Point(81, 503);
-            this.lbl_QueenValue2.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_QueenValue2.Name = "lbl_QueenValue2";
-            this.lbl_QueenValue2.Size = new System.Drawing.Size(82, 61);
-            this.lbl_QueenValue2.TabIndex = 2;
-            this.lbl_QueenValue2.Text = "1x";
-            this.lbl_QueenValue2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl_QueenSymbol2
-            // 
-            this.lbl_QueenSymbol2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_QueenSymbol2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_QueenSymbol2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_QueenSymbol2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_QueenSymbol2.Location = new System.Drawing.Point(164, 492);
-            this.lbl_QueenSymbol2.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_QueenSymbol2.Name = "lbl_QueenSymbol2";
-            this.lbl_QueenSymbol2.Size = new System.Drawing.Size(74, 76);
-            this.lbl_QueenSymbol2.TabIndex = 3;
-            this.lbl_QueenSymbol2.Text = "♛";
-            this.lbl_QueenSymbol2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_BishopSymbol2
-            // 
-            this.lbl_BishopSymbol2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_BishopSymbol2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_BishopSymbol2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_BishopSymbol2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_BishopSymbol2.Location = new System.Drawing.Point(164, 560);
-            this.lbl_BishopSymbol2.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_BishopSymbol2.Name = "lbl_BishopSymbol2";
-            this.lbl_BishopSymbol2.Size = new System.Drawing.Size(74, 76);
-            this.lbl_BishopSymbol2.TabIndex = 3;
-            this.lbl_BishopSymbol2.Text = "♝";
-            this.lbl_BishopSymbol2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_BishopValue2
-            // 
-            this.lbl_BishopValue2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_BishopValue2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_BishopValue2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_BishopValue2.Location = new System.Drawing.Point(81, 570);
-            this.lbl_BishopValue2.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_BishopValue2.Name = "lbl_BishopValue2";
-            this.lbl_BishopValue2.Size = new System.Drawing.Size(82, 61);
-            this.lbl_BishopValue2.TabIndex = 2;
-            this.lbl_BishopValue2.Text = "1x";
-            this.lbl_BishopValue2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl_HorseSymbol2
-            // 
-            this.lbl_HorseSymbol2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_HorseSymbol2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_HorseSymbol2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_HorseSymbol2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_HorseSymbol2.Location = new System.Drawing.Point(164, 629);
-            this.lbl_HorseSymbol2.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_HorseSymbol2.Name = "lbl_HorseSymbol2";
-            this.lbl_HorseSymbol2.Size = new System.Drawing.Size(74, 76);
-            this.lbl_HorseSymbol2.TabIndex = 3;
-            this.lbl_HorseSymbol2.Text = "♞";
-            this.lbl_HorseSymbol2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_RookSymbol2
-            // 
-            this.lbl_RookSymbol2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_RookSymbol2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_RookSymbol2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_RookSymbol2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_RookSymbol2.Location = new System.Drawing.Point(164, 696);
-            this.lbl_RookSymbol2.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_RookSymbol2.Name = "lbl_RookSymbol2";
-            this.lbl_RookSymbol2.Size = new System.Drawing.Size(74, 76);
-            this.lbl_RookSymbol2.TabIndex = 3;
-            this.lbl_RookSymbol2.Text = "♜";
-            this.lbl_RookSymbol2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_HorseValue2
-            // 
-            this.lbl_HorseValue2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_HorseValue2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_HorseValue2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_HorseValue2.Location = new System.Drawing.Point(81, 639);
-            this.lbl_HorseValue2.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_HorseValue2.Name = "lbl_HorseValue2";
-            this.lbl_HorseValue2.Size = new System.Drawing.Size(82, 61);
-            this.lbl_HorseValue2.TabIndex = 2;
-            this.lbl_HorseValue2.Text = "1x";
-            this.lbl_HorseValue2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl_RookValue2
-            // 
-            this.lbl_RookValue2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_RookValue2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_RookValue2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_RookValue2.Location = new System.Drawing.Point(81, 706);
-            this.lbl_RookValue2.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_RookValue2.Name = "lbl_RookValue2";
-            this.lbl_RookValue2.Size = new System.Drawing.Size(82, 61);
-            this.lbl_RookValue2.TabIndex = 2;
-            this.lbl_RookValue2.Text = "1x";
-            this.lbl_RookValue2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl_PawnSymbol2
-            // 
-            this.lbl_PawnSymbol2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_PawnSymbol2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_PawnSymbol2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_PawnSymbol2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_PawnSymbol2.Location = new System.Drawing.Point(164, 763);
-            this.lbl_PawnSymbol2.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_PawnSymbol2.Name = "lbl_PawnSymbol2";
-            this.lbl_PawnSymbol2.Size = new System.Drawing.Size(74, 76);
-            this.lbl_PawnSymbol2.TabIndex = 3;
-            this.lbl_PawnSymbol2.Text = "♟";
-            this.lbl_PawnSymbol2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_PawnValue2
-            // 
-            this.lbl_PawnValue2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_PawnValue2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_PawnValue2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_PawnValue2.Location = new System.Drawing.Point(81, 774);
-            this.lbl_PawnValue2.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_PawnValue2.Name = "lbl_PawnValue2";
-            this.lbl_PawnValue2.Size = new System.Drawing.Size(82, 61);
-            this.lbl_PawnValue2.TabIndex = 2;
-            this.lbl_PawnValue2.Text = "1x";
-            this.lbl_PawnValue2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel_Main
             // 
@@ -1378,21 +1039,53 @@ namespace FormApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Main.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel_Main.Controls.Add(this.lbl_Check2);
+            this.panel_Main.Controls.Add(this.lbl_Check1);
             this.panel_Main.Controls.Add(this.panel_ChessBoard);
             this.panel_Main.Controls.Add(this.tb_Info);
-            this.panel_Main.Controls.Add(this.splitter1);
             this.panel_Main.Controls.Add(this.lbl_Info);
-            this.panel_Main.Location = new System.Drawing.Point(1, 0);
+            this.panel_Main.Location = new System.Drawing.Point(169, 0);
             this.panel_Main.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Main.Name = "panel_Main";
-            this.panel_Main.Size = new System.Drawing.Size(852, 863);
+            this.panel_Main.Size = new System.Drawing.Size(822, 759);
             this.panel_Main.TabIndex = 5;
+            // 
+            // lbl_Check2
+            // 
+            this.lbl_Check2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Check2.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Check2.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Check2.Location = new System.Drawing.Point(321, 708);
+            this.lbl_Check2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Check2.Name = "lbl_Check2";
+            this.lbl_Check2.Size = new System.Drawing.Size(194, 51);
+            this.lbl_Check2.TabIndex = 5;
+            this.lbl_Check2.Text = "Xeque!";
+            this.lbl_Check2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Check2.Visible = false;
+            // 
+            // lbl_Check1
+            // 
+            this.lbl_Check1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Check1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Check1.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Check1.Location = new System.Drawing.Point(321, 54);
+            this.lbl_Check1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Check1.Name = "lbl_Check1";
+            this.lbl_Check1.Size = new System.Drawing.Size(194, 48);
+            this.lbl_Check1.TabIndex = 4;
+            this.lbl_Check1.Text = "Xeque!";
+            this.lbl_Check1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Check1.Visible = false;
             // 
             // panel_ChessBoard
             // 
             this.panel_ChessBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_ChessBoard.BackColor = System.Drawing.Color.White;
             this.panel_ChessBoard.ColumnCount = 8;
             this.panel_ChessBoard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.panel_ChessBoard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -1466,11 +1159,13 @@ namespace FormApp
             this.panel_ChessBoard.Controls.Add(this.c24, 4, 2);
             this.panel_ChessBoard.Controls.Add(this.c53, 3, 5);
             this.panel_ChessBoard.Controls.Add(this.c02, 2, 0);
-            this.panel_ChessBoard.Location = new System.Drawing.Point(92, 101);
+            this.panel_ChessBoard.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.panel_ChessBoard.Location = new System.Drawing.Point(110, 103);
             this.panel_ChessBoard.Margin = new System.Windows.Forms.Padding(1);
-            this.panel_ChessBoard.MaximumSize = new System.Drawing.Size(999, 999);
-            this.panel_ChessBoard.MinimumSize = new System.Drawing.Size(666, 666);
+            this.panel_ChessBoard.MaximumSize = new System.Drawing.Size(710, 710);
+            this.panel_ChessBoard.MinimumSize = new System.Drawing.Size(355, 355);
             this.panel_ChessBoard.Name = "panel_ChessBoard";
+            this.panel_ChessBoard.Padding = new System.Windows.Forms.Padding(5);
             this.panel_ChessBoard.RowCount = 8;
             this.panel_ChessBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.panel_ChessBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -1480,86 +1175,381 @@ namespace FormApp
             this.panel_ChessBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.panel_ChessBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.panel_ChessBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.panel_ChessBoard.Size = new System.Drawing.Size(666, 666);
+            this.panel_ChessBoard.Size = new System.Drawing.Size(620, 604);
             this.panel_ChessBoard.TabIndex = 3;
             // 
-            // splitter1
+            // panel_Captured2
             // 
-            this.splitter1.BackColor = System.Drawing.Color.Maroon;
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter1.Location = new System.Drawing.Point(844, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(8, 863);
-            this.splitter1.TabIndex = 2;
-            this.splitter1.TabStop = false;
-            // 
-            // panel_Captured
-            // 
-            this.panel_Captured.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel_Captured2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_Captured.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel_Captured.Controls.Add(this.lbl_PawnValue2);
-            this.panel_Captured.Controls.Add(this.lbl_RookValue2);
-            this.panel_Captured.Controls.Add(this.lbl_BishopValue2);
-            this.panel_Captured.Controls.Add(this.lbl_HorseValue2);
-            this.panel_Captured.Controls.Add(this.lbl_QueenValue2);
-            this.panel_Captured.Controls.Add(this.lbl_QueenValue1);
-            this.panel_Captured.Controls.Add(this.lbl_BishopValue1);
-            this.panel_Captured.Controls.Add(this.lbl_HorseValue1);
-            this.panel_Captured.Controls.Add(this.lbl_RookValue1);
-            this.panel_Captured.Controls.Add(this.lbl_PawnValue1);
-            this.panel_Captured.Controls.Add(this.label1);
-            this.panel_Captured.Controls.Add(this.lbl_QueenSymbol1);
-            this.panel_Captured.Controls.Add(this.lbl_BishopSymbol1);
-            this.panel_Captured.Controls.Add(this.lbl_HorseSymbol1);
-            this.panel_Captured.Controls.Add(this.lbl_RookSymbol1);
-            this.panel_Captured.Controls.Add(this.lbl_PawnSymbol2);
-            this.panel_Captured.Controls.Add(this.lbl_PawnSymbol1);
-            this.panel_Captured.Controls.Add(this.lbl_RookSymbol2);
-            this.panel_Captured.Controls.Add(this.lbl_HorseSymbol2);
-            this.panel_Captured.Controls.Add(this.lbl_BishopSymbol2);
-            this.panel_Captured.Controls.Add(this.lbl_QueenSymbol2);
-            this.panel_Captured.Location = new System.Drawing.Point(852, 0);
-            this.panel_Captured.Margin = new System.Windows.Forms.Padding(0);
-            this.panel_Captured.Name = "panel_Captured";
-            this.panel_Captured.Size = new System.Drawing.Size(268, 863);
-            this.panel_Captured.TabIndex = 6;
+            this.panel_Captured2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel_Captured2.Controls.Add(this.lbl_QueenValue1);
+            this.panel_Captured2.Controls.Add(this.lbl_BishopValue1);
+            this.panel_Captured2.Controls.Add(this.lbl_HorseValue1);
+            this.panel_Captured2.Controls.Add(this.lbl_RookValue1);
+            this.panel_Captured2.Controls.Add(this.lbl_PawnValue1);
+            this.panel_Captured2.Controls.Add(this.lbl_QueenSymbol1);
+            this.panel_Captured2.Controls.Add(this.lbl_BishopSymbol1);
+            this.panel_Captured2.Controls.Add(this.lbl_HorseSymbol1);
+            this.panel_Captured2.Controls.Add(this.lbl_RookSymbol1);
+            this.panel_Captured2.Controls.Add(this.lbl_PawnSymbol1);
+            this.panel_Captured2.Controls.Add(this.splitter2);
+            this.panel_Captured2.Controls.Add(this.label1);
+            this.panel_Captured2.Location = new System.Drawing.Point(990, 0);
+            this.panel_Captured2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel_Captured2.Name = "panel_Captured2";
+            this.panel_Captured2.Size = new System.Drawing.Size(168, 759);
+            this.panel_Captured2.TabIndex = 6;
+            // 
+            // lbl_QueenValue1
+            // 
+            this.lbl_QueenValue1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_QueenValue1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_QueenValue1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_QueenValue1.Location = new System.Drawing.Point(18, 62);
+            this.lbl_QueenValue1.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_QueenValue1.Name = "lbl_QueenValue1";
+            this.lbl_QueenValue1.Size = new System.Drawing.Size(66, 49);
+            this.lbl_QueenValue1.TabIndex = 16;
+            this.lbl_QueenValue1.Text = "1x";
+            this.lbl_QueenValue1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_BishopValue1
+            // 
+            this.lbl_BishopValue1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_BishopValue1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_BishopValue1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_BishopValue1.Location = new System.Drawing.Point(18, 118);
+            this.lbl_BishopValue1.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_BishopValue1.Name = "lbl_BishopValue1";
+            this.lbl_BishopValue1.Size = new System.Drawing.Size(66, 49);
+            this.lbl_BishopValue1.TabIndex = 17;
+            this.lbl_BishopValue1.Text = "1x";
+            this.lbl_BishopValue1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_HorseValue1
+            // 
+            this.lbl_HorseValue1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_HorseValue1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_HorseValue1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_HorseValue1.Location = new System.Drawing.Point(18, 173);
+            this.lbl_HorseValue1.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_HorseValue1.Name = "lbl_HorseValue1";
+            this.lbl_HorseValue1.Size = new System.Drawing.Size(66, 49);
+            this.lbl_HorseValue1.TabIndex = 18;
+            this.lbl_HorseValue1.Text = "1x";
+            this.lbl_HorseValue1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_RookValue1
+            // 
+            this.lbl_RookValue1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_RookValue1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_RookValue1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_RookValue1.Location = new System.Drawing.Point(18, 227);
+            this.lbl_RookValue1.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_RookValue1.Name = "lbl_RookValue1";
+            this.lbl_RookValue1.Size = new System.Drawing.Size(66, 49);
+            this.lbl_RookValue1.TabIndex = 19;
+            this.lbl_RookValue1.Text = "1x";
+            this.lbl_RookValue1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_PawnValue1
+            // 
+            this.lbl_PawnValue1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_PawnValue1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_PawnValue1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_PawnValue1.Location = new System.Drawing.Point(18, 282);
+            this.lbl_PawnValue1.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_PawnValue1.Name = "lbl_PawnValue1";
+            this.lbl_PawnValue1.Size = new System.Drawing.Size(66, 49);
+            this.lbl_PawnValue1.TabIndex = 20;
+            this.lbl_PawnValue1.Text = "1x";
+            this.lbl_PawnValue1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_QueenSymbol1
+            // 
+            this.lbl_QueenSymbol1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_QueenSymbol1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_QueenSymbol1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_QueenSymbol1.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl_QueenSymbol1.Location = new System.Drawing.Point(85, 54);
+            this.lbl_QueenSymbol1.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_QueenSymbol1.Name = "lbl_QueenSymbol1";
+            this.lbl_QueenSymbol1.Size = new System.Drawing.Size(59, 61);
+            this.lbl_QueenSymbol1.TabIndex = 21;
+            this.lbl_QueenSymbol1.Text = "♛";
+            this.lbl_QueenSymbol1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_BishopSymbol1
+            // 
+            this.lbl_BishopSymbol1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_BishopSymbol1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_BishopSymbol1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_BishopSymbol1.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl_BishopSymbol1.Location = new System.Drawing.Point(85, 110);
+            this.lbl_BishopSymbol1.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_BishopSymbol1.Name = "lbl_BishopSymbol1";
+            this.lbl_BishopSymbol1.Size = new System.Drawing.Size(59, 61);
+            this.lbl_BishopSymbol1.TabIndex = 22;
+            this.lbl_BishopSymbol1.Text = "♝";
+            this.lbl_BishopSymbol1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_HorseSymbol1
+            // 
+            this.lbl_HorseSymbol1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_HorseSymbol1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_HorseSymbol1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_HorseSymbol1.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl_HorseSymbol1.Location = new System.Drawing.Point(85, 165);
+            this.lbl_HorseSymbol1.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_HorseSymbol1.Name = "lbl_HorseSymbol1";
+            this.lbl_HorseSymbol1.Size = new System.Drawing.Size(59, 61);
+            this.lbl_HorseSymbol1.TabIndex = 23;
+            this.lbl_HorseSymbol1.Text = "♞";
+            this.lbl_HorseSymbol1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_RookSymbol1
+            // 
+            this.lbl_RookSymbol1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_RookSymbol1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_RookSymbol1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_RookSymbol1.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl_RookSymbol1.Location = new System.Drawing.Point(85, 219);
+            this.lbl_RookSymbol1.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_RookSymbol1.Name = "lbl_RookSymbol1";
+            this.lbl_RookSymbol1.Size = new System.Drawing.Size(59, 61);
+            this.lbl_RookSymbol1.TabIndex = 24;
+            this.lbl_RookSymbol1.Text = "♜";
+            this.lbl_RookSymbol1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_PawnSymbol1
+            // 
+            this.lbl_PawnSymbol1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_PawnSymbol1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_PawnSymbol1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_PawnSymbol1.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl_PawnSymbol1.Location = new System.Drawing.Point(85, 274);
+            this.lbl_PawnSymbol1.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_PawnSymbol1.Name = "lbl_PawnSymbol1";
+            this.lbl_PawnSymbol1.Size = new System.Drawing.Size(59, 61);
+            this.lbl_PawnSymbol1.TabIndex = 25;
+            this.lbl_PawnSymbol1.Text = "♟";
+            this.lbl_PawnSymbol1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // splitter2
+            // 
+            this.splitter2.BackColor = System.Drawing.Color.Maroon;
+            this.splitter2.Location = new System.Drawing.Point(0, 0);
+            this.splitter2.Margin = new System.Windows.Forms.Padding(0);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(8, 759);
+            this.splitter2.TabIndex = 5;
+            this.splitter2.TabStop = false;
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(5, 429);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(4, 376);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 6);
+            this.label1.Size = new System.Drawing.Size(164, 5);
             this.label1.TabIndex = 4;
             this.label1.Text = " ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // panel_Captured1
+            // 
+            this.panel_Captured1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel_Captured1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel_Captured1.Controls.Add(this.lbl_PawnValue2);
+            this.panel_Captured1.Controls.Add(this.lbl_RookValue2);
+            this.panel_Captured1.Controls.Add(this.lbl_BishopValue2);
+            this.panel_Captured1.Controls.Add(this.lbl_HorseValue2);
+            this.panel_Captured1.Controls.Add(this.lbl_QueenValue2);
+            this.panel_Captured1.Controls.Add(this.lbl_PawnSymbol2);
+            this.panel_Captured1.Controls.Add(this.lbl_RookSymbol2);
+            this.panel_Captured1.Controls.Add(this.lbl_HorseSymbol2);
+            this.panel_Captured1.Controls.Add(this.lbl_BishopSymbol2);
+            this.panel_Captured1.Controls.Add(this.lbl_QueenSymbol2);
+            this.panel_Captured1.Controls.Add(this.splitter1);
+            this.panel_Captured1.Location = new System.Drawing.Point(1, 0);
+            this.panel_Captured1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_Captured1.Name = "panel_Captured1";
+            this.panel_Captured1.Size = new System.Drawing.Size(168, 759);
+            this.panel_Captured1.TabIndex = 7;
+            // 
+            // lbl_PawnValue2
+            // 
+            this.lbl_PawnValue2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_PawnValue2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_PawnValue2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_PawnValue2.Location = new System.Drawing.Point(11, 658);
+            this.lbl_PawnValue2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_PawnValue2.Name = "lbl_PawnValue2";
+            this.lbl_PawnValue2.Size = new System.Drawing.Size(66, 49);
+            this.lbl_PawnValue2.TabIndex = 7;
+            this.lbl_PawnValue2.Text = "1x";
+            this.lbl_PawnValue2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_RookValue2
+            // 
+            this.lbl_RookValue2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_RookValue2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_RookValue2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_RookValue2.Location = new System.Drawing.Point(11, 604);
+            this.lbl_RookValue2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_RookValue2.Name = "lbl_RookValue2";
+            this.lbl_RookValue2.Size = new System.Drawing.Size(66, 49);
+            this.lbl_RookValue2.TabIndex = 8;
+            this.lbl_RookValue2.Text = "1x";
+            this.lbl_RookValue2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_BishopValue2
+            // 
+            this.lbl_BishopValue2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_BishopValue2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_BishopValue2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_BishopValue2.Location = new System.Drawing.Point(11, 495);
+            this.lbl_BishopValue2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_BishopValue2.Name = "lbl_BishopValue2";
+            this.lbl_BishopValue2.Size = new System.Drawing.Size(66, 49);
+            this.lbl_BishopValue2.TabIndex = 9;
+            this.lbl_BishopValue2.Text = "1x";
+            this.lbl_BishopValue2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_HorseValue2
+            // 
+            this.lbl_HorseValue2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_HorseValue2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_HorseValue2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_HorseValue2.Location = new System.Drawing.Point(11, 550);
+            this.lbl_HorseValue2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_HorseValue2.Name = "lbl_HorseValue2";
+            this.lbl_HorseValue2.Size = new System.Drawing.Size(66, 49);
+            this.lbl_HorseValue2.TabIndex = 10;
+            this.lbl_HorseValue2.Text = "1x";
+            this.lbl_HorseValue2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_QueenValue2
+            // 
+            this.lbl_QueenValue2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_QueenValue2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_QueenValue2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_QueenValue2.Location = new System.Drawing.Point(11, 442);
+            this.lbl_QueenValue2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_QueenValue2.Name = "lbl_QueenValue2";
+            this.lbl_QueenValue2.Size = new System.Drawing.Size(66, 49);
+            this.lbl_QueenValue2.TabIndex = 11;
+            this.lbl_QueenValue2.Text = "1x";
+            this.lbl_QueenValue2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_PawnSymbol2
+            // 
+            this.lbl_PawnSymbol2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_PawnSymbol2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_PawnSymbol2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_PawnSymbol2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_PawnSymbol2.Location = new System.Drawing.Point(78, 650);
+            this.lbl_PawnSymbol2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_PawnSymbol2.Name = "lbl_PawnSymbol2";
+            this.lbl_PawnSymbol2.Size = new System.Drawing.Size(59, 61);
+            this.lbl_PawnSymbol2.TabIndex = 12;
+            this.lbl_PawnSymbol2.Text = "♟";
+            this.lbl_PawnSymbol2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_RookSymbol2
+            // 
+            this.lbl_RookSymbol2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_RookSymbol2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_RookSymbol2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_RookSymbol2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_RookSymbol2.Location = new System.Drawing.Point(78, 596);
+            this.lbl_RookSymbol2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_RookSymbol2.Name = "lbl_RookSymbol2";
+            this.lbl_RookSymbol2.Size = new System.Drawing.Size(59, 61);
+            this.lbl_RookSymbol2.TabIndex = 13;
+            this.lbl_RookSymbol2.Text = "♜";
+            this.lbl_RookSymbol2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_HorseSymbol2
+            // 
+            this.lbl_HorseSymbol2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_HorseSymbol2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_HorseSymbol2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_HorseSymbol2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_HorseSymbol2.Location = new System.Drawing.Point(78, 542);
+            this.lbl_HorseSymbol2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_HorseSymbol2.Name = "lbl_HorseSymbol2";
+            this.lbl_HorseSymbol2.Size = new System.Drawing.Size(59, 61);
+            this.lbl_HorseSymbol2.TabIndex = 14;
+            this.lbl_HorseSymbol2.Text = "♞";
+            this.lbl_HorseSymbol2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_BishopSymbol2
+            // 
+            this.lbl_BishopSymbol2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_BishopSymbol2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_BishopSymbol2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_BishopSymbol2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_BishopSymbol2.Location = new System.Drawing.Point(78, 487);
+            this.lbl_BishopSymbol2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_BishopSymbol2.Name = "lbl_BishopSymbol2";
+            this.lbl_BishopSymbol2.Size = new System.Drawing.Size(59, 61);
+            this.lbl_BishopSymbol2.TabIndex = 15;
+            this.lbl_BishopSymbol2.Text = "♝";
+            this.lbl_BishopSymbol2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_QueenSymbol2
+            // 
+            this.lbl_QueenSymbol2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_QueenSymbol2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_QueenSymbol2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_QueenSymbol2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_QueenSymbol2.Location = new System.Drawing.Point(78, 433);
+            this.lbl_QueenSymbol2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_QueenSymbol2.Name = "lbl_QueenSymbol2";
+            this.lbl_QueenSymbol2.Size = new System.Drawing.Size(59, 61);
+            this.lbl_QueenSymbol2.TabIndex = 16;
+            this.lbl_QueenSymbol2.Text = "♛";
+            this.lbl_QueenSymbol2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // splitter1
+            // 
+            this.splitter1.BackColor = System.Drawing.Color.Maroon;
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter1.Location = new System.Drawing.Point(160, 0);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(8, 759);
+            this.splitter1.TabIndex = 6;
+            this.splitter1.TabStop = false;
+            // 
             // MainScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1120, 863);
+            this.ClientSize = new System.Drawing.Size(1158, 759);
+            this.Controls.Add(this.panel_Captured1);
+            this.Controls.Add(this.panel_Captured2);
             this.Controls.Add(this.panel_Main);
-            this.Controls.Add(this.panel_Captured);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.MinimumSize = new System.Drawing.Size(1024, 768);
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1096, 624);
             this.Name = "MainScreen";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chess";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainScreen_FormClosing);
             this.Load += new System.EventHandler(this.MainScreen_Load);
             this.panel_Main.ResumeLayout(false);
             this.panel_Main.PerformLayout();
             this.panel_ChessBoard.ResumeLayout(false);
             this.panel_ChessBoard.PerformLayout();
-            this.panel_Captured.ResumeLayout(false);
+            this.panel_Captured2.ResumeLayout(false);
+            this.panel_Captured1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1632,31 +1622,35 @@ namespace FormApp
         private System.Windows.Forms.Label c77;
         private System.Windows.Forms.Label lbl_Info;
         private System.Windows.Forms.Label tb_Info;
+        private System.Windows.Forms.Panel panel_Main;
+        private System.Windows.Forms.Panel panel_Captured2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel panel_ChessBoard;
+        private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Label lbl_QueenValue1;
+        private System.Windows.Forms.Label lbl_BishopValue1;
+        private System.Windows.Forms.Label lbl_HorseValue1;
+        private System.Windows.Forms.Label lbl_RookValue1;
+        private System.Windows.Forms.Label lbl_PawnValue1;
         private System.Windows.Forms.Label lbl_QueenSymbol1;
         private System.Windows.Forms.Label lbl_BishopSymbol1;
         private System.Windows.Forms.Label lbl_HorseSymbol1;
         private System.Windows.Forms.Label lbl_RookSymbol1;
         private System.Windows.Forms.Label lbl_PawnSymbol1;
-        private System.Windows.Forms.Label lbl_BishopValue1;
-        private System.Windows.Forms.Label lbl_HorseValue1;
-        private System.Windows.Forms.Label lbl_RookValue1;
-        private System.Windows.Forms.Label lbl_PawnValue1;
-        private System.Windows.Forms.Label lbl_QueenValue2;
-        private System.Windows.Forms.Label lbl_QueenSymbol2;
-        private System.Windows.Forms.Label lbl_BishopSymbol2;
-        private System.Windows.Forms.Label lbl_BishopValue2;
-        private System.Windows.Forms.Label lbl_HorseSymbol2;
-        private System.Windows.Forms.Label lbl_RookSymbol2;
-        private System.Windows.Forms.Label lbl_HorseValue2;
-        private System.Windows.Forms.Label lbl_RookValue2;
-        private System.Windows.Forms.Label lbl_PawnSymbol2;
-        private System.Windows.Forms.Label lbl_PawnValue2;
-        private System.Windows.Forms.Panel panel_Main;
+        private System.Windows.Forms.Panel panel_Captured1;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Panel panel_Captured;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TableLayoutPanel panel_ChessBoard;
+        private System.Windows.Forms.Label lbl_PawnValue2;
+        private System.Windows.Forms.Label lbl_RookValue2;
+        private System.Windows.Forms.Label lbl_BishopValue2;
+        private System.Windows.Forms.Label lbl_HorseValue2;
+        private System.Windows.Forms.Label lbl_QueenValue2;
+        private System.Windows.Forms.Label lbl_PawnSymbol2;
+        private System.Windows.Forms.Label lbl_RookSymbol2;
+        private System.Windows.Forms.Label lbl_HorseSymbol2;
+        private System.Windows.Forms.Label lbl_BishopSymbol2;
+        private System.Windows.Forms.Label lbl_QueenSymbol2;
+        private System.Windows.Forms.Label lbl_Check1;
+        private System.Windows.Forms.Label lbl_Check2;
     }
 }
 
