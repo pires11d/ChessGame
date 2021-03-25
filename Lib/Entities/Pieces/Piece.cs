@@ -5,8 +5,8 @@ namespace Lib.Entities.Pieces
     public abstract class Piece
     {
         public Position Position { get; set; }
+        public PieceColorEnum CurrentColor { get; set; }
         public PieceColorEnum Color { get; set; }
-        public PieceColorEnum DefaultColor { get; set; }
         public PieceTypeEnum Type { get; protected set; }
         public int Movements { get; protected set; }
         public static Board Board { get; set; }
@@ -14,8 +14,8 @@ namespace Lib.Entities.Pieces
         public Piece(PieceColorEnum color)
         {
             Position = null;
+            CurrentColor = color;
             Color = color;
-            DefaultColor = color;
             Movements = 0;
         }
 
@@ -50,13 +50,13 @@ namespace Lib.Entities.Pieces
         public void Select()
         {
             Board.CurrentPiece = this;
-            Color = PieceColorEnum.Green;
+            CurrentColor = PieceColorEnum.Green;
         }
 
         public void Deselect()
         {
             Board.CurrentPiece = null;
-            Color = DefaultColor;
+            CurrentColor = Color;
         }
 
         internal bool CanMoveTo(Position position, bool canMoveFreely = true, bool canCapture = true)
@@ -66,7 +66,7 @@ namespace Lib.Entities.Pieces
 
             var piece = Board.Piece(position);
 
-            return (canMoveFreely && piece == null) || (canCapture && piece != null && piece?.DefaultColor != DefaultColor);
+            return (canMoveFreely && piece == null) || (canCapture && piece != null && piece?.Color != Color);
         }
 
         internal bool HasCapture(Position position)
@@ -79,7 +79,7 @@ namespace Lib.Entities.Pieces
             if (piece == null)
                 return false;
 
-            return (piece.DefaultColor != DefaultColor);
+            return (piece.Color != Color);
         }
 
         public abstract bool[,] PossibleMoves(Player player);

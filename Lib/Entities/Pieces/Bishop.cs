@@ -8,21 +8,17 @@ namespace Lib.Entities.Pieces
         {
             Type = PieceTypeEnum.Bishop;
         }
-        public Bishop(PieceColorEnum color, Board board) : this(color)
-        {
-            Board = board;
-        }
 
         public override bool[,] PossibleMoves(Player player)
         {
             var matrix = new bool[Board.Rows, Board.Columns];
-            var p = new Position();
+            Position p;
 
             //TopLeft
             p = this.Position;
             while (p.IsValid())
             {
-                p = p.TopLeft();
+                p = p.TopLeft;
                 if (CanMoveTo(p))
                 {
                     matrix[p.Row, p.Column] = true;
@@ -39,7 +35,7 @@ namespace Lib.Entities.Pieces
             p = this.Position;
             while (p.IsValid())
             {
-                p = p.TopRight();
+                p = p.TopRight;
                 if (CanMoveTo(p))
                 {
                     matrix[p.Row, p.Column] = true;
@@ -56,7 +52,7 @@ namespace Lib.Entities.Pieces
             p = this.Position;
             while (p.IsValid())
             {
-                p = p.BottomLeft();
+                p = p.BottomLeft;
                 if (CanMoveTo(p))
                 {
                     matrix[p.Row, p.Column] = true;
@@ -73,7 +69,7 @@ namespace Lib.Entities.Pieces
             p = this.Position;
             while (p.IsValid())
             {
-                p = p.BottomRight();
+                p = p.BottomRight;
                 if (CanMoveTo(p))
                 {
                     matrix[p.Row, p.Column] = true;

@@ -11,7 +11,7 @@ namespace Lib.Enums.Pieces
         Rook = 1,
 
         [Description("♞")]
-        Horse = 2,
+        Night = 2,
 
         [Description("♝")]
         Bishop = 3,

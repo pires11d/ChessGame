@@ -1,4 +1,5 @@
 ﻿using Lib.Enums.Pieces;
+using System;
 
 namespace Lib.Entities.Pieces
 {
@@ -8,57 +9,83 @@ namespace Lib.Entities.Pieces
         {
             Type = PieceTypeEnum.King;
         }
-        public King(PieceColorEnum color, Board board) : this(color)
-        {
-            Board = board;
-        }
+
+        public bool IsOnCheck { get; set; }
 
         public override bool[,] PossibleMoves(Player player)
         {
             var matrix = new bool[Board.Rows, Board.Columns];
-            var p = new Position();
+            Position p;
 
             //Top
-            p = this.Position.Top();
+            p = this.Position.Top;
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //Bottom
-            p = this.Position.Bottom();
+            p = this.Position.Bottom;
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //Left
-            p = this.Position.Left();
+            p = this.Position.Left;
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //Right
-            p = this.Position.Right();
+            p = this.Position.Right;
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //TopLeft
-            p = this.Position.TopLeft();
+            p = this.Position.TopLeft;
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //TopRight
-            p = this.Position.TopRight();
+            p = this.Position.TopRight;
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //BottomLeft
-            p = this.Position.BottomLeft();
+            p = this.Position.BottomLeft;
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
             //BottomRight
-            p = this.Position.BottomRight();
+            p = this.Position.BottomRight;
             if (CanMoveTo(p))
                 matrix[p.Row, p.Column] = true;
 
+            //Castling
+            if (Movements == 0 && !IsOnCheck)
+            {
+                //short
+                if (HasRook(this.Position.Right.Right.Right))
+                {
+                    var p1 = this.Position.Right;
+                    var p2 = this.Position.Right.Right;
+                    if (Board.Piece(p1) == null && Board.Piece(p2) == null)
+                        matrix[p2.Row, p2.Column] = true;
+                }
+                //long
+                if (HasRook(this.Position.Left.Left.Left.Left))
+                {
+                    var p1 = this.Position.Left;
+                    var p2 = this.Position.Left.Left;
+                    var p3 = this.Position.Left.Left.Left;
+                    if (Board.Piece(p1) == null && Board.Piece(p2) == null && Board.Piece(p3) == null)
+                        matrix[p2.Row, p2.Column] = true;
+                }
+            }
+
             return matrix;
+        }
+
+        private bool HasRook(Position position)
+        {
+            Piece rook = Board.Piece(position);
+            return (rook != null && rook is Rook && rook.Color == Color && rook.Movements == 0);
         }
     }
 }

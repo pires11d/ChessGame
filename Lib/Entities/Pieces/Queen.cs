@@ -8,21 +8,17 @@ namespace Lib.Entities.Pieces
         {
             Type = PieceTypeEnum.Queen;
         }
-        public Queen(PieceColorEnum color, Board board) : this(color)
-        {
-            Board = board;
-        }
 
         public override bool[,] PossibleMoves(Player player)
         {
             var matrix = new bool[Board.Rows, Board.Columns];
-            var p = new Position();
+            Position p;
 
             //Top
             p = this.Position;
             while (p.IsValid())
             {
-                p = p.Top();
+                p = p.Top;
                 if (CanMoveTo(p))
                 {
                     matrix[p.Row, p.Column] = true;
@@ -39,7 +35,7 @@ namespace Lib.Entities.Pieces
             p = this.Position;
             while (p.IsValid())
             {
-                p = p.Bottom();
+                p = p.Bottom;
                 if (CanMoveTo(p))
                 {
                     matrix[p.Row, p.Column] = true;
@@ -56,7 +52,7 @@ namespace Lib.Entities.Pieces
             p = this.Position;
             while (p.IsValid())
             {
-                p = p.Left();
+                p = p.Left;
                 if (CanMoveTo(p))
                 {
                     matrix[p.Row, p.Column] = true;
@@ -73,7 +69,7 @@ namespace Lib.Entities.Pieces
             p = this.Position;
             while (p.IsValid())
             {
-                p = p.Right();
+                p = p.Right;
                 if (CanMoveTo(p))
                 {
                     matrix[p.Row, p.Column] = true;
@@ -90,7 +86,7 @@ namespace Lib.Entities.Pieces
             p = this.Position;
             while (p.IsValid())
             {
-                p = p.TopLeft();
+                p = p.TopLeft;
                 if (CanMoveTo(p))
                 {
                     matrix[p.Row, p.Column] = true;
@@ -107,7 +103,7 @@ namespace Lib.Entities.Pieces
             p = this.Position;
             while (p.IsValid())
             {
-                p = p.TopRight();
+                p = p.TopRight;
                 if (CanMoveTo(p))
                 {
                     matrix[p.Row, p.Column] = true;
@@ -124,7 +120,7 @@ namespace Lib.Entities.Pieces
             p = this.Position;
             while (p.IsValid())
             {
-                p = p.BottomLeft();
+                p = p.BottomLeft;
                 if (CanMoveTo(p))
                 {
                     matrix[p.Row, p.Column] = true;
@@ -141,7 +137,7 @@ namespace Lib.Entities.Pieces
             p = this.Position;
             while (p.IsValid())
             {
-                p = p.BottomRight();
+                p = p.BottomRight;
                 if (CanMoveTo(p))
                 {
                     matrix[p.Row, p.Column] = true;

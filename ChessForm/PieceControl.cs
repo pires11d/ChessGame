@@ -1,6 +1,5 @@
 ﻿using Lib.Entities;
 using Lib.Entities.Pieces;
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 

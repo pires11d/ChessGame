@@ -94,9 +94,11 @@ namespace ChessForm
 
                     try
                     {
-                        Game.Play(origin, destination);
+                        var (x, y) = Game.Play(origin, destination);
 
                         Release(label);
+
+                        Additional(x, y);
 
                         UpdateGameInfo();
                     }
@@ -118,6 +120,31 @@ namespace ChessForm
             }
         }
 
+        private void Additional(Position source, Position destination)
+        {
+            if (source != null && destination != null)
+            {
+                if (source != destination)
+                {
+                    Label sourceLabel = GetLabelInBoard(source.Row, source.Column);
+                    Label destinationLabel = GetLabelInBoard(destination.Row, destination.Column);
+
+                    destinationLabel.Text = sourceLabel.Text;
+                    destinationLabel.ForeColor = sourceLabel.ForeColor;
+                    destinationLabel.Font = sourceLabel.Font;
+
+                    sourceLabel.Text = "";
+                }
+                else
+                {
+                    Label changingLabel = GetLabelInBoard(source.Row, source.Column);
+                    changingLabel.Text = PieceTypeEnum.Queen.GetDescription();
+                    float maxFont = panel_ChessBoard.Controls.OfType<Label>().Max(x => x.Font.Size);
+                    changingLabel.Font = new Font(changingLabel.Font.FontFamily, maxFont, FontStyle.Regular);
+                }
+            }
+        }
+
         private void Release(Label label)
         {
             label.Text = CurrentControl.Text;
@@ -135,7 +162,7 @@ namespace ChessForm
         {
             var position = PieceControl.GetPositionFromControlName(label.Name);
             var selectedPiece = Game.Board.Piece(position);
-            if (selectedPiece.Color == Game.CurrentPlayer.Color)
+            if (selectedPiece.CurrentColor == Game.CurrentPlayer.Color)
             {
                 CurrentControl = new PieceControl(label.Name);
                 CurrentControl.ForeColor = label.ForeColor;
@@ -187,7 +214,7 @@ namespace ChessForm
 
         private void PaintLabel(int i, int j)
         {
-            Label label = GetLabel(i, j);
+            Label label = GetLabelInBoard(i, j);
             if (label.BackColor == DarkColor)
                 label.BackColor = SelectedDarkColor;
             else if (label.BackColor == LightColor)
@@ -196,14 +223,14 @@ namespace ChessForm
 
         private void UnpaintLabel(int i, int j)
         {
-            Label label = GetLabel(i, j);
+            Label label = GetLabelInBoard(i, j);
             if (label.BackColor == SelectedDarkColor)
                 label.BackColor = DarkColor;
             else if (label.BackColor == SelectedLightColor)
                 label.BackColor = LightColor;
         }
 
-        private Label GetLabel(int i, int j)
+        private Label GetLabelInBoard(int i, int j)
         {
             return panel_ChessBoard.Controls.OfType<Label>().FirstOrDefault(x => x.Name == $"c{i}{j}");
         }

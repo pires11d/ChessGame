@@ -30,7 +30,7 @@ namespace ChessConsole
 
                         if (pieceFound != null)
                         {
-                            if (pieceFound.Color == game.CurrentPlayer.Color)
+                            if (pieceFound.CurrentColor == game.CurrentPlayer.Color)
                             {
                                 found = true;
                                 game.Board.SelectPiece(pieceFound);
@@ -67,7 +67,7 @@ namespace ChessConsole
                 if (!string.IsNullOrEmpty(input2))
                 {
                     game.Destination = new Position(input2);
-                    game.Play(game.Source, game.Destination);
+                    var (x,p) = game.Play(game.Source, game.Destination);
                 }
             }
             catch (Exception ex)

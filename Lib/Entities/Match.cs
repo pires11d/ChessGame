@@ -34,13 +34,14 @@ namespace Lib.Entities
 
         public bool IsOver { get; set; }
 
-        public void Play(Position source, Position destination)
+        public (Position, Position) Play(Position source, Position destination)
         {
-            Piece pieceToMove = Board.TakePiece(source);
+            Piece pieceToMove = Board.Piece(source);
 
             if (pieceToMove.IsPossibleMove(CurrentPlayer, destination))
             {
-                Piece pieceCaptured = MovePiece(pieceToMove, destination);
+                Piece pieceCaptured = MovePiece(source, destination);
+
                 if (IsCheck())
                 {
                     UndoMovePiece(source, destination, pieceCaptured);
@@ -55,28 +56,61 @@ namespace Lib.Entities
                     }
                 }
 
+                var (x,y) = SpecialMove(pieceToMove, source, destination);
+
                 ChangeTurn(pieceToMove.Color);
                 IsCheck();
+
+                return (x, y);
             }
-            else
-            {
-                Board.AddPiece(source, pieceToMove);
-            }
+            return (null, null);
         }
 
-        public Piece MovePiece(Piece pieceToMove, Position destination)
+        public Piece MovePiece(Position source, Position destination)
         {
+            Piece pieceToMove = Board.TakePiece(source);
             Piece pieceToCapture = Board.TakePiece(destination);
 
             if (pieceToCapture != null)
-            {
                 CurrentPlayer.Capture(pieceToCapture);
-            }
 
             Board.AddPiece(destination, pieceToMove);
             pieceToMove.AddMovement();
 
             return pieceToCapture;
+        }
+
+        private (Position, Position) SpecialMove(Piece currentPiece, Position source, Position destination)
+        {
+            // Castling
+            if (currentPiece is King && Math.Abs(destination.Column - source.Column) > 1)
+            {
+                Position source2, destination2;
+                switch (destination.Column - source.Column)
+                {
+                    // short
+                    case 2:
+                        source2 = source.Right.Right.Right;
+                        destination2 = source.Right;
+                        MovePiece(source2, destination2);
+                        return (source2, destination2);
+                    // long
+                    case -2:
+                        source2 = source.Left.Left.Left.Left;
+                        destination2 = source.Left;
+                        MovePiece(source2, destination2);
+                        return (source2, destination2);
+                }
+            }
+            // Promotion
+            else if (currentPiece is Pawn && (destination.Row == 0 || destination.Row == Board.Rows))
+            {
+                Board.TakePiece(currentPiece.Position);
+                Board.AddPiece(destination, new Queen(currentPiece.CurrentColor));
+                return (destination, destination);
+            }
+
+            return (null, null);
         }
 
         public void UndoMovePiece(Position origin, Position destination, Piece pieceCaptured)
@@ -105,6 +139,7 @@ namespace Lib.Entities
             }
 
             Players[CurrentPlayer.Number].IsOnCheck = playerIsOnCheck;
+            king.IsOnCheck = playerIsOnCheck;
 
             return playerIsOnCheck;
         }
@@ -122,11 +157,10 @@ namespace Lib.Entities
 
                         if (piece.IsPossibleMove(CurrentPlayer, availableDestination))
                         {
-                            Piece pieceToMove = Board.TakePiece(originalPosition);
-                            Piece pieceCaptured = MovePiece(pieceToMove, availableDestination);
-
+                            Piece pieceCaptured = MovePiece(originalPosition, availableDestination);
                             bool isCheck = IsCheck();
                             UndoMovePiece(originalPosition, availableDestination, pieceCaptured);
+
                             if (!isCheck)
                                 return false;
                         }
@@ -137,11 +171,14 @@ namespace Lib.Entities
             return true;
         }
 
-        private void ChangeTurn(PieceColorEnum currentColor)
+        private void ChangeTurn(PieceColorEnum? currentColor)
         {
-            CurrentPlayer = Players.Values.FirstOrDefault(x => x.Color != currentColor);
-            OtherPlayer = Players.Values.FirstOrDefault(x => x.Color == currentColor);
-            Board.CurrentPiece = null;
+            if (currentColor != null)
+            {
+                CurrentPlayer = Players.Values.FirstOrDefault(x => x.Color != currentColor);
+                OtherPlayer = Players.Values.FirstOrDefault(x => x.Color == currentColor);
+                Board.CurrentPiece = null;
+            }
         }
 
         private void StartNewGame(PieceColorEnum color1, PieceColorEnum color2)
@@ -161,12 +198,12 @@ namespace Lib.Entities
         {
             //Player 1
             Board.AddPiece(new Position(0, 0), new Rook(color1));
-            Board.AddPiece(new Position(0, 1), new Horse(color1));
+            Board.AddPiece(new Position(0, 1), new Knight(color1));
             Board.AddPiece(new Position(0, 2), new Bishop(color1));
             Board.AddPiece(new Position(0, 3), new Queen(color1));
             Board.AddPiece(new Position(0, 4), new King(color1));
             Board.AddPiece(new Position(0, 5), new Bishop(color1));
-            Board.AddPiece(new Position(0, 6), new Horse(color1));
+            Board.AddPiece(new Position(0, 6), new Knight(color1));
             Board.AddPiece(new Position(0, 7), new Rook(color1));
             Board.AddPiece(new Position(1, 0), new Pawn(color1));
             Board.AddPiece(new Position(1, 1), new Pawn(color1));
@@ -187,12 +224,12 @@ namespace Lib.Entities
             Board.AddPiece(new Position(6, 6), new Pawn(color2));
             Board.AddPiece(new Position(6, 7), new Pawn(color2));
             Board.AddPiece(new Position(7, 0), new Rook(color2));
-            Board.AddPiece(new Position(7, 1), new Horse(color2));
+            Board.AddPiece(new Position(7, 1), new Knight(color2));
             Board.AddPiece(new Position(7, 2), new Bishop(color2));
             Board.AddPiece(new Position(7, 3), new Queen(color2));
             Board.AddPiece(new Position(7, 4), new King(color2));
             Board.AddPiece(new Position(7, 5), new Bishop(color2));
-            Board.AddPiece(new Position(7, 6), new Horse(color2));
+            Board.AddPiece(new Position(7, 6), new Knight(color2));
             Board.AddPiece(new Position(7, 7), new Rook(color2));
         }
     }

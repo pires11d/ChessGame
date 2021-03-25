@@ -28,7 +28,7 @@ namespace Lib.Entities
             if (ExistsPiece(position))
                 throw new ApplicationException("Já existe uma peça nessa posição!");
             piece.Position = position;
-            piece.Color = piece.DefaultColor;
+            piece.CurrentColor = piece.Color;
             Pieces[position.Row, position.Column] = piece;
         }
 
@@ -75,7 +75,7 @@ namespace Lib.Entities
 
             foreach (var piece in Pieces)
             {
-                if (piece?.Color == color)
+                if (piece?.CurrentColor == color)
                     pieceList.Add(piece);
             }
 
@@ -86,7 +86,7 @@ namespace Lib.Entities
         {
             foreach (var piece in Pieces)
             {
-                if (piece is King && piece.Color == color)
+                if (piece is King && piece.CurrentColor == color)
                     return (King)piece;
             }
 
@@ -116,7 +116,7 @@ namespace Lib.Entities
                     var piece = GetPieceByIndex(i, j);
                     if (piece != null)
                     {
-                        Console.ForegroundColor = (ConsoleColor)piece.Color;
+                        Console.ForegroundColor = (ConsoleColor)piece.CurrentColor;
                         Console.Write(piece);
                     }
                     else

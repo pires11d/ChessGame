@@ -56,44 +56,44 @@ namespace Lib.Entities
                     Column >= MaxColumns);
         }
 
-        public Position Top()
+        public Position Top
         {
-            return new Position(Row - 1, Column);
+             get { return new Position(Row - 1, Column); }
         }
 
-        public Position TopLeft()
+        public Position TopLeft
         {
-            return new Position(Row - 1, Column - 1);
+             get { return new Position(Row - 1, Column - 1); }
         }
 
-        public Position Left()
+        public Position Left
         {
-            return new Position(Row, Column - 1);
+             get { return new Position(Row, Column - 1); }
         }
 
-        public Position BottomLeft()
+        public Position BottomLeft
         {
-            return new Position(Row + 1, Column - 1);
+             get { return new Position(Row + 1, Column - 1); }
         }
 
-        public Position Bottom()
+        public Position Bottom
         {
-            return new Position(Row + 1, Column);
+             get { return new Position(Row + 1, Column); }
         }
 
-        public Position BottomRight()
+        public Position BottomRight
         {
-            return new Position(Row + 1, Column + 1);
+             get { return new Position(Row + 1, Column + 1); }
         }
 
-        public Position Right()
+        public Position Right
         {
-            return new Position(Row, Column + 1);
+            get { return new Position(Row, Column + 1); }
         }
 
-        public Position TopRight()
+        public Position TopRight
         {
-            return new Position(Row - 1, Column + 1);
+            get { return new Position(Row - 1, Column + 1); }
         }
 
         public override string ToString()
