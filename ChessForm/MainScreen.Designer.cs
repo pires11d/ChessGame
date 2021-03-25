@@ -1,5 +1,5 @@
 ﻿
-namespace FormApp
+namespace ChessForm
 {
     partial class MainScreen
     {

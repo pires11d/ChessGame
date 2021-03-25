@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace FormApp
+namespace ChessForm
 {
     partial class HomeScreen
     {

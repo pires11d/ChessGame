@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace FormApp
+namespace ChessForm
 {
     public partial class MainScreen : Form
     {

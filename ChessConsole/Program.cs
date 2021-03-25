@@ -1,7 +1,7 @@
 ﻿using Lib.Entities;
 using System;
 
-namespace ConsoleApp
+namespace ChessConsole
 {
     public class Program
     {
