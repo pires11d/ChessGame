@@ -20,6 +20,8 @@ namespace Lib.Entities
             StartNewGame(color1, color2);
         }
 
+        public int Turn { get; set; }
+
         public Board Board { get; set; }
 
         public Position Source { get; set; }
@@ -63,7 +65,10 @@ namespace Lib.Entities
 
                 return (x, y);
             }
-            return (null, null);
+            else 
+            {
+                throw new ApplicationException("Posição de destino inválida!");
+            }
         }
 
         public Piece MovePiece(Position source, Position destination)
@@ -82,19 +87,25 @@ namespace Lib.Entities
 
         private (Position, Position) SpecialMove(Piece currentPiece, Position source, Position destination)
         {
-            // Castling
+            //EnPassant (flagging)
+            if (currentPiece is Pawn && Math.Abs(destination.Row - source.Row) == 2)
+                Board.EnPassant = currentPiece;
+            else
+                Board.EnPassant = null;
+
+            //Castling
             if (currentPiece is King && Math.Abs(destination.Column - source.Column) > 1)
             {
                 Position source2, destination2;
                 switch (destination.Column - source.Column)
                 {
-                    // short
+                    //short
                     case 2:
                         source2 = source.Right.Right.Right;
                         destination2 = source.Right;
                         MovePiece(source2, destination2);
                         return (source2, destination2);
-                    // long
+                    //long
                     case -2:
                         source2 = source.Left.Left.Left.Left;
                         destination2 = source.Left;
@@ -102,12 +113,23 @@ namespace Lib.Entities
                         return (source2, destination2);
                 }
             }
-            // Promotion
+            //Promotion
             else if (currentPiece is Pawn && (destination.Row == 0 || destination.Row == Board.Rows))
             {
                 Board.TakePiece(currentPiece.Position);
                 Board.AddPiece(destination, new Queen(currentPiece.CurrentColor));
-                return (destination, destination);
+                return (null, destination);
+            }
+            //EnPassant (capturing)
+            else if (currentPiece is Pawn && destination.Column != source.Column)
+            {
+                Position shift;
+                if (CurrentPlayer.Number == 1)
+                    shift = destination.Top;
+                else
+                    shift = destination.Bottom;
+                CurrentPlayer.Capture(Board.TakePiece(shift));
+                return (shift, null);
             }
 
             return (null, null);
@@ -175,6 +197,7 @@ namespace Lib.Entities
         {
             if (currentColor != null)
             {
+                Turn++;
                 CurrentPlayer = Players.Values.FirstOrDefault(x => x.Color != currentColor);
                 OtherPlayer = Players.Values.FirstOrDefault(x => x.Color == currentColor);
                 Board.CurrentPiece = null;

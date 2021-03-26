@@ -8,10 +8,10 @@ namespace Lib.Entities
     public class Board
     {
         public int Rows { get; set; }
-
         public int Columns { get; set; }
-
         internal Piece[,] Pieces { get; set; }
+        public Piece CurrentPiece { get; set; }
+        public Piece EnPassant { get; set; } = null;
 
         public Board(int rows, int columns)
         {
@@ -56,18 +56,21 @@ namespace Lib.Entities
 
         public void SelectPiece(Piece pieceFound)
         {
-            pieceFound.Select();
-
-            Pieces[pieceFound.Position.Row, pieceFound.Position.Column] = pieceFound;
+            if (pieceFound != null)
+            {
+                pieceFound.Select();
+                Pieces[pieceFound.Position.Row, pieceFound.Position.Column] = pieceFound;
+            }
         }
 
         public void DeselectPiece(Piece pieceFound)
         {
-            pieceFound.Deselect();
-            Pieces[pieceFound.Position.Row, pieceFound.Position.Column] = pieceFound;
+            if (pieceFound != null)
+            {
+                pieceFound.Deselect();
+                Pieces[pieceFound.Position.Row, pieceFound.Position.Column] = pieceFound;
+            }
         }
-
-        internal Piece CurrentPiece { get; set; }
 
         public List<Piece> GetPieces(PieceColorEnum color)
         {

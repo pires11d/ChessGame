@@ -39,6 +39,23 @@ namespace Lib.Entities.Pieces
                     if (CanMoveTo(p, true, false))
                         matrix[p.Row, p.Column] = true;
                 }
+
+                //EnPassant
+                if (this.Position.Row == Board.Rows - 4)
+                {
+                    p = this.Position.Left;
+                    if (HasCapture(p) && Board.Piece(p) == Board.EnPassant)
+                    {
+                        p = p.Bottom;
+                        matrix[p.Row, p.Column] = true;
+                    }
+                    p = this.Position.Right;
+                    if (HasCapture(p) && Board.Piece(p) == Board.EnPassant)
+                    {
+                        p = p.Bottom;
+                        matrix[p.Row, p.Column] = true;
+                    }
+                }
             }
             //White
             else
@@ -64,6 +81,23 @@ namespace Lib.Entities.Pieces
                     p = this.Position.Top.Top;
                     if (CanMoveTo(p, true, false))
                         matrix[p.Row, p.Column] = true;
+                }
+
+                //EnPassant
+                if (this.Position.Row == 3)
+                {
+                    p = this.Position.Left;
+                    if (HasCapture(p) && Board.Piece(p) == Board.EnPassant)
+                    {
+                        p = p.Top;
+                        matrix[p.Row, p.Column] = true;
+                    }
+                    p = this.Position.Right;
+                    if (HasCapture(p) && Board.Piece(p) == Board.EnPassant)
+                    {
+                        p = p.Top;
+                        matrix[p.Row, p.Column] = true;
+                    }
                 }
             }
 

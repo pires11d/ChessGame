@@ -122,26 +122,31 @@ namespace ChessForm
 
         private void Additional(Position source, Position destination)
         {
+            //Castling
             if (source != null && destination != null)
             {
-                if (source != destination)
-                {
-                    Label sourceLabel = GetLabelInBoard(source.Row, source.Column);
-                    Label destinationLabel = GetLabelInBoard(destination.Row, destination.Column);
+                Label sourceLabel = GetLabelInBoard(source.Row, source.Column);
+                Label destinationLabel = GetLabelInBoard(destination.Row, destination.Column);
 
-                    destinationLabel.Text = sourceLabel.Text;
-                    destinationLabel.ForeColor = sourceLabel.ForeColor;
-                    destinationLabel.Font = sourceLabel.Font;
+                destinationLabel.Text = sourceLabel.Text;
+                destinationLabel.ForeColor = sourceLabel.ForeColor;
+                destinationLabel.Font = sourceLabel.Font;
 
-                    sourceLabel.Text = "";
-                }
-                else
-                {
-                    Label changingLabel = GetLabelInBoard(source.Row, source.Column);
-                    changingLabel.Text = PieceTypeEnum.Queen.GetDescription();
-                    float maxFont = panel_ChessBoard.Controls.OfType<Label>().Max(x => x.Font.Size);
-                    changingLabel.Font = new Font(changingLabel.Font.FontFamily, maxFont, FontStyle.Regular);
-                }
+                sourceLabel.Text = "";
+            }
+            //EnPassant
+            else if (source != null && destination == null)
+            {
+                Label emptyLabel = GetLabelInBoard(source.Row, source.Column);
+                emptyLabel.Text = "";
+            }
+            //Promotion
+            else if (source == null && destination != null)
+            {
+                Label changingLabel = GetLabelInBoard(destination.Row, destination.Column);
+                changingLabel.Text = PieceTypeEnum.Queen.GetDescription();
+                float maxFont = panel_ChessBoard.Controls.OfType<Label>().Max(x => x.Font.Size);
+                changingLabel.Font = new Font(changingLabel.Font.FontFamily, maxFont, FontStyle.Regular);
             }
         }
 
