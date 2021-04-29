@@ -121,7 +121,7 @@ namespace Lib.Entities
                 return (null, destination);
             }
             //EnPassant (capturing)
-            else if (currentPiece is Pawn && destination.Column != source.Column)
+            else if (Board.EnPassant == currentPiece && destination.Column != source.Column)
             {
                 Position shift;
                 if (CurrentPlayer.Number == 1)
